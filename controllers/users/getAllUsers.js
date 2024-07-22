@@ -1,7 +1,7 @@
 const User = require('../../models/users.js');
-const getFullUrl = require('../../utils/imgUrl.module.js');
 
-const getAllProducts = async (req, res) => {
+
+const getAllUsers = async (req, res) => {
     try {
         const users = await User.find(); // lekérjük a felhasználókat
         res.json(users);
@@ -10,4 +10,4 @@ const getAllProducts = async (req, res) => {
     }
 };
 
-module.exports = getAllProducts;
+module.exports = getAllUsers;

@@ -4,8 +4,8 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
     UserID: { type: Number, required: true, unique: true },
     UserName: { type: String, required: true },
-    Password: { type: String, required: true },  // A jelszó titkosítást igényel, ha a valós alkalmazásban használod
-    IsAdmin: { type: String, default: '0' },  // Ha a mező nem szükséges, akkor állítsd `default`-ra, különben `type: Boolean`
+    Password: { type: String, required: true },  
+    IsAdmin: { type: String, default: '0' },  
     AdminRole: { type: String, default: '' },
     JobTitle: { type: String, default: '' },
     BirthDate: { type: String, default: '' },  
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     InvoicePostcode: { type: String, default: '' },
     InvoiceCity: { type: String, default: '' },
     InvoiceAddress: { type: String, default: '' },
-    ActiveFlag: { type: String, default: '1' }  // Ha a mező nem szükséges, állítsd `default`-ra, különben `type: Boolean`
+    ActiveFlag: { type: String, default: '1' }  
 }, { timestamps: true });  // Az időbélyegzés automatikusan hozzáadódik
 
 // Hash-eljük a jelszót mentés előtt
@@ -31,7 +31,7 @@ userSchema.pre('save', async function (next) {
 
     try {
         const salt = await bcrypt.genSalt(10);
-        console.log(salt)
+ 
         this.Password = await bcrypt.hash(this.Password, salt);
         next();
     } catch (error) {

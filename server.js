@@ -34,7 +34,7 @@ app.use(express.json());
 
 // a /products al útvonalainak beállítása a productRouts-ból
 app.use('/products', productRoutes);
-app.use('/user', authRoutes);
+app.use('/', authRoutes);
 
 // Ha nem megfelelő az URL hibát küldünk vissza
 app.get("*", (req, res) => {
