@@ -1,12 +1,11 @@
 const express = require('express');
 
 // bekérjük az egyes útvonalak kontrollerjét
-const getAllProducts = require('../controllers/getALLProducts');
-const getOneProductById = require('../controllers/getOneProductById');
-const newProduct = require('../controllers/newProduct');
-// TODO 
-// const updateProduct = require('../controllers/updateProduct');
-// const deleteProduct = require('../controllers/deleteProduct');
+const getAllProducts = require('../controllers/products/getAllProducts.js');
+const getOneProductById = require('../controllers/products/getOneProductById.js');
+const newProduct = require('../controllers/products/newProduct.js');
+const updateProduct = require('../controllers/products/updateProduct.js');
+const deleteProduct = require('../controllers/products/deleteProduct.js');
 
 const router = express.Router();
 
@@ -15,8 +14,7 @@ const router = express.Router();
 router.get('/', getAllProducts);
 router.get('/:id', getOneProductById);
 router.post('/newproduct', newProduct);
-// TODO
-// router.put('/:id', updateProduct);
-// router.delete('/:id', deleteProduct);
+router.put('/:id', updateProduct);
+router.delete('/:id', deleteProduct);
 
 module.exports = router;

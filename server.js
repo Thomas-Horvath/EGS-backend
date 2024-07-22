@@ -4,9 +4,8 @@ const path = require('path');
 const dotenv = require("dotenv");
 const connectDB = require('./config/db');
 const productRoutes = require('./routes/productRoutes');
-const usersRoutes = require('./routes/usersRoutes');
-const authRoutes = require('./routes/authRoutes');
-
+const authRoutes = require('./routes/authRoutes.js');
+const getAllOrders = require('./controllers/order/getAllOrders.js');
 
 dotenv.config();
 
@@ -14,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 
-// szükséges cors, hogy külső oldalról is lehessen kéréseket küldeni az oldalra
+// Szükséges a cors, hogy külső oldalról is lehessen kéréseket küldeni az oldalra!
 const cors = require("cors");
 app.use(cors());
 
@@ -35,9 +34,6 @@ app.use(express.json());
 
 // a /products al útvonalainak beállítása a productRouts-ból
 app.use('/products', productRoutes);
-//TODO ez majd megszűnik
-app.use('/users', usersRoutes);
-
 app.use('/user', authRoutes);
 
 // Ha nem megfelelő az URL hibát küldünk vissza

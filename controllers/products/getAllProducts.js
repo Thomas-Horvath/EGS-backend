@@ -1,5 +1,5 @@
-const Product = require('../models/product.js');
-const getFullUrl = require('../utils/imgUrl.module.js');
+const Product = require('../../models/product.js');
+const getFullUrl = require('../../utils/imgUrl.module.js');
 
 const getAllProducts = async (req, res) => {
     try {

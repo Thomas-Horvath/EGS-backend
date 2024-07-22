@@ -1,0 +1,28 @@
+const bcrypt = require('bcrypt');
+const User = require('../../models/users');
+
+const adminRegister = async (req, res) => {
+    try {
+        const { UserName, Password, EmailAddress, FirstName, LastName, AdminRole, JobTitle } = req.body;
+        const hashedPassword = await bcrypt.hash(Password, 10);
+
+        const newAdmin = new User({
+            UserName,
+            Password: hashedPassword,
+            EmailAddress,
+            FirstName,
+            LastName,
+            IsAdmin: "1",
+            AdminRole,
+            JobTitle,
+            ActiveFlag: "1"
+        });
+
+        await newAdmin.save();
+        res.status(201).json({ message: 'Admin regisztráció sikeres!' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = adminRegister;

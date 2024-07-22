@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../models/users.js'); // A helyes útvonalat állítsd be a saját projektednek megfelelően
-
+const User = require('../../models/users.js'); // A helyes útvonalat állítsd be a saját projektednek megfelelően
 
 
 
@@ -15,7 +14,7 @@ const login = async (req, res) => {
         }
 
         const token = jwt.sign(
-            { id: user._id, UserName: user.UserName },
+            { id: user._id, UserName: user.UserName, IsAdmin: user.IsAdmin},
             process.env.JWT_SECRET, // Titkos kulcs a tokenekhez
             { expiresIn: '1h' } // Token lejárati idő
         );
@@ -26,21 +25,6 @@ const login = async (req, res) => {
     }
 };
 
-// Token ellenőrzése middleware-ben
-const authenticate = (req, res, next) => {
-    const token = req.header('Authorization')?.replace('Bearer ', '');
 
-    if (!token) {
-        return res.status(401).json({ message: 'Nincs token' });
-    }
 
-    jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-        if (err) {
-            return res.status(401).json({ message: 'Érvénytelen token' });
-        }
-        req.user = decoded;
-        next();
-    });
-};
-
-module.exports = { login, authenticate };
+module.exports = login;
