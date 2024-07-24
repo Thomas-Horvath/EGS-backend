@@ -7,6 +7,9 @@
     - Express szerver 
     - dotenv 
     - path
+    - Jasonwebtoken
+    - bcrypt
+
 
 2. MongoDB adatbázis szerver
     Az adatbázis 3 collectiont tartalmaz:

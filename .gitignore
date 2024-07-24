@@ -1,6 +1,6 @@
 node_modules/
 notes.md 
-.env
 tetspass.js
 passv.js
 hash.js
+.env
