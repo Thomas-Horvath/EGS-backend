@@ -3,9 +3,9 @@ const fs = require("fs");
 const path = require('path');
 const dotenv = require("dotenv");
 const connectDB = require('./config/db');
-const productRoutes = require('./routes/productRoutes');
-const authRoutes = require('./routes/authRoutes.js');
-const getAllOrders = require('./controllers/order/getAllOrders.js');
+const publicRoutes = require('./routes/publicRoutes.js');
+const privatRoutes = require('./routes/privatRoutes.js');
+
 
 dotenv.config();
 
@@ -33,8 +33,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // a /products al útvonalainak beállítása a productRouts-ból
-app.use('/products', productRoutes);
-app.use('/', authRoutes);
+app.use('/', publicRoutes);
+app.use('/private', privatRoutes);
 
 // Ha nem megfelelő az URL hibát küldünk vissza
 app.get("*", (req, res) => {

@@ -15,16 +15,4 @@ const connectDB = async () => {
   }
 };
 
-// Az adatbázis kapcsolat zárása ha kéne:
-
-// const closeDBConnection = async () => {
-//   try {
-//     await mongoose.connection.close();
-//     console.log('MongoDB kapcsolat bezárva!');
-//   } catch (error) {
-//     console.error('Hiba a MongoDB kapcsolat bezárásakor:', error);
-//   }
-// };
-
-
 module.exports = connectDB;

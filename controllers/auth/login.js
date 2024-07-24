@@ -16,7 +16,7 @@ const login = async (req, res) => {
         const token = jwt.sign(
             { id: user.UserID, UserName: user.UserName, IsAdmin: user.IsAdmin},
             process.env.JWT_SECRET, // Titkos kulcs a tokenekhez
-            { expiresIn: '1h' } // Token lejárati idő
+            { expiresIn: '24h' } // Token lejárati idő
         );
 
         res.json({ token });
