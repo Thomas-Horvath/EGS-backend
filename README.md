@@ -21,28 +21,26 @@
 
 - Az alkalmazásaba két fő útvonal érhető el:
 
-     - a / útvonal tartalmazza a token nálkül elérhető publikus útvonalakat:
+     - a / útvonal tartalmazza a token nélkül elérhető publikus útvonalakat:
 
         1. /login    (POST)
         2. /register  (POST)
         3. /products  (GET)
         4. /product/:id    (GET)
 
-    - a /private útvonal a bejelentkezéshez kötött 
+    - a /private útvonal a bejelentkezéshez kötött. 
         - vásárlói tokennel elérhető:
 
             1. /profile   (GET)
             2. /profileupdate  (PUT)
             3. /order   (POST)
 
-        - Adminiszrátor tokennel 
+        - Adminiszrátor tokennel:
         
             1. /profile   (GET)
             2. /profileupdate  (PUT)
-            3. /order   (POST)
-
+            3. /order   (POST) 
             +
-
             4. /adminregister  (POST)
             5. /orders    (GET)
             6. /order/:id  (GET)
