@@ -1,6 +1,5 @@
 const jwt = require('jsonwebtoken');
-const User = require('../../models/users.js'); // A helyes útvonalat állítsd be a saját projektednek megfelelően
-
+const User = require('../../models/users.js'); 
 
 
 // Bejelentkezés és token generálás
@@ -15,7 +14,7 @@ const login = async (req, res) => {
 
         const token = jwt.sign(
             { id: user.UserID, UserName: user.UserName, IsAdmin: user.IsAdmin},
-            process.env.JWT_SECRET, // Titkos kulcs a tokenekhez
+            process.env.JWT_SECRET, // Titkos kulcs a tokenekhez a .env fájlból
             { expiresIn: '24h' } // Token lejárati idő
         );
 

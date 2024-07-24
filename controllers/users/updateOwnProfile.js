@@ -5,7 +5,7 @@ const updateUserById = async (req, res) => {
     try {
          
         const id = req.user.id; 
-        const { ...updateData } = req.body; // Az update-hez szükséges adatok
+        const { ...updateData } = req.body; 
 
         const updatedUser = await User.findOneAndUpdate({ UserID: id }, updateData, { new: true });
 

@@ -2,8 +2,6 @@ const User = require('../../models/users.js');
 
 const getUserById = async (req, res) => {
   try {
-    // console.log(req.user.id)
-    //tokenből kinyerjük a saját userid-nkat
     const id = req.user.id; 
     const order = await User.findOne({ UserID: id });
     if (!order) {

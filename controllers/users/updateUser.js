@@ -3,8 +3,8 @@ const User = require('../../models/users.js');
 
 const updateUserById = async (req, res) => {
     try {
-        const id = Number(req.params.id); // Megkapjuk a kérés URL-jében a termék ID-jét
-        const { ...updateData } = req.body; // Az update-hez szükséges adatok
+        const id = Number(req.params.id); 
+        const { ...updateData } = req.body;
 
         const updatedUser = await User.findOneAndUpdate({ UserID: id }, updateData, { new: true });
 
