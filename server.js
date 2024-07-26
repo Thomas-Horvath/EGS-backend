@@ -34,10 +34,17 @@ app.use(express.json());
 // az útvonalak a/api után érhetők el!
 app.use('/api', allRoutes);
 
+
+app.get('/favicon.ico' , (req, res) => {
+res.sendFile(path.join(__dirname, 'favicon.ico'))
+});
+
+
 // Ha nem megfelelő az URL hibát küldünk vissza
 app.get("*", (req, res) => {
   res.status(404).send({ status: 404 });
 });
+
 
 
 
