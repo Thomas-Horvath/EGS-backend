@@ -501,7 +501,7 @@
       "BrandName": "Cort",
       "Price": 119900,
       "Description": "Hugh Manson már több mint 30 éve készít gitárokat és nagy elismerést szerzett a zeneiparban az innováció és a minőség terén. Gondoljunk csak a Matt Bellamy-val (Muse) közösen kifejlesztett custom modellre. A 2017-es évben a Manson Guitar Works és a Cort két új elektromos gitármodellel, az M-Jettel és a Classic TC-vel folytatja sikeres együttműködését.",
-      "ProductPhotoURL": "/api/productsImg/18-cort-Classic-TC-sbn .webp"
+      "ProductPhotoURL": "/api/productsImg/18-cort-Classic-TC-sbn.webp"
     },
     {
       "ProductID": 19,
@@ -2013,7 +2013,7 @@
       "BrandName": "Gibson",
       "Price": 472910,
       "Description": "\"Kevés olyan elektromos gitárról mondható el, hogy olyan klasszikus vagy legendás, mint az amerikai Gibson gyártó Les Paul modellje. A Les Paul Special Vintage Cherry elektromos gitár visszatér az eredeti, 1955-ös, egyszemélyes kialakításhoz. A Special sorozat gitárjait a rokon \"\"olcsó\"\" Junior modellektől a két P-90-es hangszedő és a négy potenciométer és egy háromállású billenőkapcsoló formájában található standard hangbeállítási lehetőségek különböztetik meg.\"",
-      "ProductPhotoURL": "/api/productsImg/72-Les Paul-Tribute-Satin-Cherry-Sunburst.webp"
+      "ProductPhotoURL": "/api/productsImg/72-Les-Paul-Tribute-Satin-Cherry-Sunburst.webp"
     },
     {
       "ProductID": 73,
