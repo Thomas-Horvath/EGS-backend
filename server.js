@@ -3,8 +3,7 @@ const fs = require("fs");
 const path = require('path');
 const dotenv = require("dotenv");
 const connectDB = require('./config/db');
-const publicRoutes = require('./routes/publicRoutes.js');
-const privatRoutes = require('./routes/privatRoutes.js');
+const allRoutes = require('./routes/allRoutes.js');
 
 
 dotenv.config();
@@ -18,10 +17,9 @@ const cors = require("cors");
 app.use(cors());
 
 
-
 // Képeket szolgáltatjuk statikus fájlként
 app.use('/api/productsImg', express.static(path.join(__dirname, 'api/productsImg')));
- 
+
 // Adatbázis kapcsolat léteítése
 connectDB();
 
@@ -32,13 +30,13 @@ connectDB();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// a /products al útvonalainak beállítása a productRouts-ból
-app.use('/', publicRoutes);
-app.use('/private', privatRoutes);
+
+// az útvonalak a/api után érhetők el!
+app.use('/api', allRoutes);
 
 // Ha nem megfelelő az URL hibát küldünk vissza
 app.get("*", (req, res) => {
-    res.send(`<h1 style="text-align:center; padding:3rem; ">A keresett oldal nem található!</h1>`);
+  res.status(404).send({ status: 404 });
 });
 
 

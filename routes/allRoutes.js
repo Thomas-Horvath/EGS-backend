@@ -17,20 +17,38 @@ const updateOwnProfile = require('../controllers/users/updateOwnProfile.js');
 const newProduct = require('../controllers/products/newProduct.js');
 const updateProduct = require('../controllers/products/updateProduct.js');
 const deleteProduct = require('../controllers/products/deleteProduct.js');
+const getAllProducts = require('../controllers/products/getAllProducts.js');
+const getOneProductById = require('../controllers/products/getOneProductById.js');
+const customerRegister = require('../controllers/auth/customerRegister.js');
+const login = require('../controllers/auth/login.js');
 const router = express.Router();
 
 
 
+// token nélkül végezhető műveletek:
+
+// bejelentkezés
+router.post('/login', login);
+
+// új vásárló regisztráció
+router.post('/register', customerRegister); 
+
+// minden termék lekérdezése
+router.get('/products', getAllProducts);
+
+// egy termék lekérdezése ID alapján
+router.get('/product/:id', getOneProductById);
 
 
 
 
-// Vásárlói útvonal
+
+// tokenhez kötött műveletek:
+
+// Vásárlói útvonal:
 router.get('/profile', authenticate ,  getOwnProfile ); // saját adatok lekérdezése
 router.put('/profileupdate', authenticate ,  updateOwnProfile); // saját adatok frissítése
 router.post('/order' , authenticate , createOrder);
-
-
 
 
 
