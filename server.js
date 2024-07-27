@@ -19,7 +19,7 @@ app.use(cors());
 
 // Képeket szolgáltatjuk statikus fájlként
 app.use('/api/productsImg', express.static(path.join(__dirname, 'api/productsImg')));
-
+app.use( express.static(path.join(__dirname, 'public')));
 // Adatbázis kapcsolat léteítése
 connectDB();
 
