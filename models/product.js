@@ -26,7 +26,10 @@ const productSchema = new mongoose.Schema({
     BrandName: { type: String, required: true },
     Price: { type: Number, required: true },
     Description: { type: String, required: true },
-    ProductPhotoURL: { type: String, required: true }
+    ProductPhotoURL: { type: String, required: true },
+    OnSale: { type: Boolean, default: false },
+    SalePrice: { type: Number, default: 0 },
+    IsStock: { type: Boolean, default: true },
 }, { timestamps: true });
 
 
