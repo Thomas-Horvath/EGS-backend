@@ -1577,8 +1577,8 @@
     "Description": "A Fender Player Series elektromos gitárok a népszerű Standard modellek helyébe lépnek. Ez a márka alapvető minőségi vonala, amely az ár/minőség arány tekintetében egyértelmű pluszt jelent.",
     "ProductPhotoURL": "/api/productsImg/51-Player-Stratocaster-LH-MN-CAR.webp",
     "OnSale": true,
-    "SalePrice": 0,
-    "InStock": 260000
+    "SalePrice": 260000,
+    "InStock": true
   },
   {
     "ProductID": 52,

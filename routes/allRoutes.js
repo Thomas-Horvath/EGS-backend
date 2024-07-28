@@ -1,5 +1,8 @@
 const express = require('express');
 
+const path = require('path');
+
+
 const authenticate = require('../middlewares/authenticate.js');
 const authorizeAdmin = require('../middlewares/authorizeAdmin.js');
 const adminRegister = require('../controllers/auth/adminRegister.js');
@@ -14,7 +17,7 @@ const updateUser = require('../controllers/users/updateUser.js');
 const deleteUser = require('../controllers/users/deleteUser.js')
 const getOwnProfile = require('../controllers/users/getOwnProfile.js');
 const updateOwnProfile = require('../controllers/users/updateOwnProfile.js');
-const newProduct = require('../controllers/products/newProduct.js');
+const { newProduct, upload }= require('../controllers/products/newProduct.js');
 const updateProduct = require('../controllers/products/updateProduct.js');
 const deleteProduct = require('../controllers/products/deleteProduct.js');
 const getAllProducts = require('../controllers/products/getAllProducts.js');
@@ -22,6 +25,8 @@ const getOneProductById = require('../controllers/products/getOneProductById.js'
 const customerRegister = require('../controllers/auth/customerRegister.js');
 const login = require('../controllers/auth/login.js');
 const router = express.Router();
+
+
 
 
 
@@ -71,8 +76,8 @@ router.put('/user/:id', authenticate , authorizeAdmin, updateUser); // össze fe
 router.delete('/user/:id', authenticate , authorizeAdmin, deleteUser ); // Felhasználó törlése
 
 // termékek kezelése
-router.post('/newproduct', newProduct);
-router.put('/product/:id', updateProduct);
-router.delete('/product/:id', deleteProduct);
+router.post('/newproduct', authenticate , authorizeAdmin, upload.single('productPhoto'), newProduct);
+router.put('/product/:id', authenticate , authorizeAdmin, updateProduct);
+router.delete('/product/:id', authenticate , authorizeAdmin, deleteProduct);
 
 module.exports = router;
