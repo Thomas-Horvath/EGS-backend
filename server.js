@@ -11,11 +11,29 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const corsOptions = { 
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS', 'DELETE', 'PUT'],
+  allowedHeaders: ['Authorization', 'Content-Type']
+};
 
 // Szükséges a cors, hogy külső oldalról is lehessen kéréseket küldeni az oldalra!
 const cors = require("cors");
-app.use(cors({}));
+app.use(cors(corsOptions));
 
+
+
+app.use((req, res, next) => {
+  console.log(`Received ${req.method} request for ${req.url}`);
+  next();
+});
+
+app.options('*', cors(corsOptions));
+
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
 
 // Képeket szolgáltatjuk statikus fájlként
 app.use('/api/productsImg', express.static(path.join(__dirname, 'api/productsImg')));

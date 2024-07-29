@@ -5,6 +5,7 @@ const path = require('path');
 
 const authenticate = require('../middlewares/authenticate.js');
 const authorizeAdmin = require('../middlewares/authorizeAdmin.js');
+const authorizeCustomer = require('../middlewares/authorizeCustomer.js');
 const adminRegister = require('../controllers/auth/adminRegister.js');
 const getAllOrders = require('../controllers/order/getAllOrders.js');
 const getOrderById = require('../controllers/order/getOrderById.js');
@@ -51,9 +52,9 @@ router.get('/product/:id', getOneProductById);
 // tokenhez kötött műveletek:
 
 // Vásárlói útvonal:
-router.get('/profile', authenticate ,  getOwnProfile ); // saját adatok lekérdezése
-router.put('/profileupdate', authenticate ,  updateOwnProfile); // saját adatok frissítése
-router.post('/order' , authenticate , createOrder);
+router.get('/profile', authenticate , authorizeCustomer,  getOwnProfile ); // saját adatok lekérdezése
+router.put('/profileupdate', authenticate , authorizeCustomer, updateOwnProfile); // saját adatok frissítése
+router.post('/order' , authenticate , authorizeCustomer, createOrder);
 
 
 
