@@ -15,7 +15,7 @@ const customerRegister = async (req, res) => {
            const newUserId = maxUserIdUser ? maxUserIdUser.UserID + 1 : 1;
 
         // Új felhasználó létrehozása és mentése
-        const user = new User({ UserID : newUserId , UserName, Password, EmailAddress, FirstName, LastName, IsAdmin: "0", ActivFlage: "1" });
+        const user = new User({ UserID : newUserId , UserName, Password, EmailAddress, FirstName, LastName, IsAdmin: false, ActivFlage: "1" });
         await user.save();
 
         res.status(201).json({ message: 'Sikeres regisztráció' });

@@ -18,7 +18,7 @@ const deleteUser = require('../controllers/users/deleteUser.js')
 const getOwnProfile = require('../controllers/users/getOwnProfile.js');
 const updateOwnProfile = require('../controllers/users/updateOwnProfile.js');
 const { newProduct, upload }= require('../controllers/products/newProduct.js');
-const updateProduct = require('../controllers/products/updateProduct.js');
+const updateProductById = require('../controllers/products/updateProduct.js');
 const deleteProduct = require('../controllers/products/deleteProduct.js');
 const getAllProducts = require('../controllers/products/getAllProducts.js');
 const getOneProductById = require('../controllers/products/getOneProductById.js');
@@ -77,7 +77,7 @@ router.delete('/user/:id', authenticate , authorizeAdmin, deleteUser ); // Felha
 
 // termékek kezelése
 router.post('/newproduct', authenticate , authorizeAdmin, upload.single('productPhoto'), newProduct);
-router.put('/product/:id', authenticate , authorizeAdmin, updateProduct);
+router.put('/product/:id', authenticate , authorizeAdmin, updateProductById);
 router.delete('/product/:id', authenticate , authorizeAdmin, deleteProduct);
 
 module.exports = router;

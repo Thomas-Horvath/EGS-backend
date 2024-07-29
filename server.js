@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 // Szükséges a cors, hogy külső oldalról is lehessen kéréseket küldeni az oldalra!
 const cors = require("cors");
-app.use(cors());
+app.use(cors({}));
 
 
 // Képeket szolgáltatjuk statikus fájlként

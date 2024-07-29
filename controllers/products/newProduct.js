@@ -15,7 +15,8 @@ const storage = multer.diskStorage({
       const newProductID = highestProduct ? highestProduct.ProductID + 1 : 1;
       
       // Generáljuk az új fájlnevet
-      const fileExtension = path.extname(file.originalname);
+      // csak a kiterjesztést szedi ki a feltöltött névből, ha az egész név kell akkor a basename kell!!
+      const fileExtension = path.extname(file.originalname); 
       const newFileName = `${newProductID}${fileExtension}`;
       cb(null, newFileName);
     } catch (err) {

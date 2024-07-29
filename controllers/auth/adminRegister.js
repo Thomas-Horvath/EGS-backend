@@ -16,7 +16,7 @@ const adminRegister = async (req, res) => {
             EmailAddress,
             FirstName,
             LastName,
-            IsAdmin: "1",
+            IsAdmin: true,
             AdminRole,
             JobTitle,
             ActiveFlag: "1"
