@@ -1,19 +1,186 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EGS - API</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
-    <h1>Üdv az EGS-webshop API-on!</h1>
-    <ul>
-    	<li><a href="https://thomasapi.eu/api/products">/api/products - Minden termék</a></li>
-    	<li><a href="https://thomasapi.eu/api/product/231">/api/product/231 - KX4120 Pengetotartóval</a></li>
-	<li><a href="https://thomasapi.eu/api/product/82">/api/product/82 - Explorer Antique Natural</a></li>	
-	<li><a href="https://thomasapi.eu/api/product/12">/api/product/12  - G110LH BK</a></li>
-	<li><a href="https://thomasapi.eu/api/product/375">/api/product/375 - Ernie Ball 6418</a></li>
-    </ul>
+    <h1>Üdvözöllek a  ThomasAPI-on!</h1>
+    <p class="sub-title">Documentáció</p>
+    <div class="tartalom">
+        <h3>Tartalomjegyzék:</h3>
+        <ul>
+            <li><a href="#products">Termékek lekérdezése</a></li>
+            <li><a href="#oneproduct">Egy termék lekérdezése</a></li>
+            <li><a href="#login">Bejelnetkezés</a></li>
+            <li><a href="#register">Vásárlói regisztráció</a></li>
+            <li><a href="#profile">Saját profil lekérdezése</a></li>
+            <!-- <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li> -->
+        </ul>
+    </div>
+
+    <div class="container" id="products">
+        <div class="content">
+            <h2>Termékek lekérdezése <q class="green">Token nélkül elérhető útvonal</q></h2>
+
+            <p>Az össze termék lekérdezése.</p>
+        </div>
+        <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/products', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+    </div>
+
+
+
+    <div class="container" id="oneproduct">
+        <div class="content">
+            <h2>Egy termék lekérdezése <q class="green">Token nélkül elérhető útvonal</q></h2>
+            <p>Alapértelmezetten az id 1 és375 közötti szám. A további hozzáadott terméek id-ja mindig egyel növekszik.
+            </p>
+        </div>
+        <pre>
+            <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/product/:id', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+            </code>
+        </pre>
+    </div>
+
+    <div class="container" id="login">
+        <div class="content">
+            <h2>Bejelentkezés <q class="green">Token nélkül elérhető útvonal</q></h2>
+            <p>Az oldalra vásárlóként és adminisztrátorként lehet bejelentkezni. Minden felhasználó jelszava:
+                <strong>Password</strong>.
+            </p>
+            <p>Bejelentkezés után egy tokent kapunk válaszként.</p>
+            <h3>Példa felhaználók:</h3>
+            <p><strong>Vásárló felhasználó nevek:</strong></p>
+            <ul>
+                <li>a.fausztina1269</li>
+                <li>b.eduárd1389</li>
+
+            </ul>
+            <p><strong>Adminisztrátor felhasználó nevek:</strong></p>
+            <ul>
+                <li>h.tamás1363</li>
+                <li>k.kata42</li>
+            </ul>
+
+        </div>
+        <pre>
+            <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },  
+        mode: "cors",  
+        body: JSON.stringify({
+
+        username: 'emilys',
+        password: 'emilyspass',
+
+        })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+
+    </div>
+
+    <div class="container" id="register">
+        <div class="content">
+            <h2>Vásárlói regisztráció <q class="green">Token nélkül elérhető útvonal</q></h2>
+            <p>Itt lehet új vásárlót regisztrálni, ezen az útvonalon autómatikusan beállítja az IsAdmin értéket
+                false-ra.
+            </p>
+            <p>A rendszer már létező felhasználó nevet vagy regisztrált email címet nem enged mégegyszer regisztrálni.
+            </p>
+        </div>
+        <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/register', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+        },
+        mode: "cors",
+        body: JSON.stringify({
+                "UserName" : "New customer",                    // kötelező kitölteni
+                "Password" : "Password",                        // kötelező kitölteni
+                "BirthDate" : "",
+                "LastName" : "New",
+                "FirstName" : "Customer",
+                "EmailAddress" : "new.customer@gmail.com",      // kötelező kitölteni  
+                "PhoneNumber" : "",
+                "Postcode" : "",
+                "City" : "",
+                "Address" : "",
+                "ShippingPostcode" : "",
+                "ShippingCity" : "",
+                "ShippingAddress" : "",
+                "InvoicePostcode" : "",
+                "InvoicegCity" : "",
+                "InvoiceAddress" : ""
+            })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+    </div>
+
+
+    <div class="container" id="profile">
+        <div class="content">
+            <h2>Saját profil lekérdezése <q class="yellow">Vásárlói és admin tokennel is elérhető útvonal</q></h2>
+
+            <p>Saját felhasználói profil adatait kapjuk meg.</p>
+        </div>
+        <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/profile', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kellmásolni
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 </body>
+
 </html>
