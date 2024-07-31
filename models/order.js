@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 // Rendelési tételek séma
 const orderItemSchema = new Schema({
-  ItemID: { type: Number, required: true },
   ProductID: { type: Number, required: true },
   Quantity: { type: Number, required: true },
   UnitPrice: { type: Number, required: true },

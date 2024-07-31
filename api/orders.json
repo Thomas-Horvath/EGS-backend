@@ -11,35 +11,30 @@
         "Comment": "",
         "OrderItems": [
             {
-                "ItemID": 1,
                 "ProductID": 34,
                 "Quantity": 1,
                 "UnitPrice": 289900,
                 "LineTotal": 289900
             },
             {
-                "ItemID": 2,
                 "ProductID": 183,
                 "Quantity": 1,
                 "UnitPrice": 159000,
                 "LineTotal": 159000
             },
             {
-                "ItemID": 3,
                 "ProductID": 233,
                 "Quantity": 1,
                 "UnitPrice": 4990,
                 "LineTotal": 4990
             },
             {
-                "ItemID": 4,
                 "ProductID": 292,
                 "Quantity": 2,
                 "UnitPrice": 5200,
                 "LineTotal": 10400
             },
             {
-                "ItemID": 5,
                 "ProductID": 310,
                 "Quantity": 3,
                 "UnitPrice": 290,
@@ -59,21 +54,18 @@
         "Comment": "",
         "OrderItems": [
             {
-                "ItemID": 1,
                 "ProductID": 244,
                 "Quantity": 1,
                 "UnitPrice": 14900,
                 "LineTotal": 14900
             },
             {
-                "ItemID": 2,
                 "ProductID": 276,
                 "Quantity": 2,
                 "UnitPrice": 5600,
                 "LineTotal": 11200
             },
             {
-                "ItemID": 3,
                 "ProductID": 334,
                 "Quantity": 3,
                 "UnitPrice": 390,
@@ -94,7 +86,6 @@
         "Comment": "",
         "OrderItems": [
             {
-                "ItemID": 1,
                 "ProductID": 276,
                 "Quantity": 1,
                 "UnitPrice": 5600,

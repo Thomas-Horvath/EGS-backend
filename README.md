@@ -35,13 +35,15 @@
             2. /profileupdate  (PUT)
             3. /order   (POST)
 
+  
+
         - Adminiszrátor tokennel:
         
-            1. /profile   (GET)
-            2. /profileupdate  (PUT)
-            3. /order   (POST) 
-            +
+          
+         
             4. /adminregister  (POST)
+
+            
             5. /orders    (GET)
             6. /order/:id  (GET)
             7. /order/:id  (PUT)

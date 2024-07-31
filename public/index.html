@@ -9,31 +9,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-    <h1>Üdvözöllek a  ThomasAPI-on!</h1>
-    <p class="sub-title">Documentáció</p>
-    <div class="tartalom">
-        <h3>Tartalomjegyzék:</h3>
-        <ul>
-            <li><a href="#products">Termékek lekérdezése</a></li>
-            <li><a href="#oneproduct">Egy termék lekérdezése</a></li>
-            <li><a href="#login">Bejelnetkezés</a></li>
-            <li><a href="#register">Vásárlói regisztráció</a></li>
-            <li><a href="#profile">Saját profil lekérdezése</a></li>
-            <!-- <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li> -->
-        </ul>
-    </div>
-
-    <div class="container" id="products">
-        <div class="content">
-            <h2>Termékek lekérdezése <q class="green">Token nélkül elérhető útvonal</q></h2>
-
-            <p>Az össze termék lekérdezése.</p>
+    <div class="hero">
+        <h1>Üdvözöllek a ThomasAPI-on!</h1>
+        <p class="sub-title">Dokumentáció</p>
+        <div class="contents-container">
+            <h3>Tartalomjegyzék:</h3>
+            <ul class="contents-list">
+                <li><a href="#products">Összes termékek lekérdezése</a></li>
+                <li><a href="#oneproduct">Egy termék lekérdezése</a></li>
+                <li><a href="#login">Bejelnetkezés</a></li>
+                <li><a href="#register">Vásárlói regisztráció</a></li>
+                <li><a href="#profile">Saját profil lekérdezése</a></li>
+                <li><a href="#profileUpdate">Saját profil frissítése</a></li>
+                <li><a href="#sendOrder">Rendelés leadása</a></li>
+                <li><a href="#ownOrder">Saját rendelések lekérdezése</a></li>
+                <li><a href="#adminRegister">Új admin regisztrálása</a></li>
+                <li><a href="#allOrder">Az összes rendelés adatainak lekérése</a></li>
+                <li><a href="#oneOrder">Egy rendelés adatainak lekérése</a></li>
+                <li><a href="#updateOrder">Egy rendelés módosítása</a></li>
+                <li><a href="#deleteOrder">Egy rendelés törlése</a></li>
+                <li><a href="#allUsers">Az összes felhasználó megtekintése</a></li>
+                <li><a href="#oneUser">Egy felhasználó adatainak lekérése</a></li>
+                <li><a href="#updateOneUser">Egy felhasználó adatainak módosítása</a></li>
+                <li><a href="#deleteUser">Egy felhasználó törlése</a></li>
+                <li><a href="#newProduct">Új termék feltöltése</a></li>
+                <li><a href="#updateProduct">Egy termék módosítása</a></li>
+                <li><a href="#deleteProduct">Egy termék törlése</a></li>
+            </ul>
         </div>
-        <pre>
+    </div>
+    <main>
+        <div class="container" id="products">
+            <div class="content">
+                <h2>Összes termékek lekérdezése <q class="green">Token nélkül elérhető útvonal</q></h2>
+
+                <p>Az összes termék lekérdezése.</p>
+            </div>
+            <pre>
         <code class="language-javascript">
     fetch('https://thomasapi.eu/api/products', {
         method: "GET",
@@ -46,19 +59,20 @@
     .then(console.log);
         </code>
     </pre>
-    </div>
-
-
-
-    <div class="container" id="oneproduct">
-        <div class="content">
-            <h2>Egy termék lekérdezése <q class="green">Token nélkül elérhető útvonal</q></h2>
-            <p>Alapértelmezetten az id 1 és375 közötti szám. A további hozzáadott terméek id-ja mindig egyel növekszik.
-            </p>
         </div>
-        <pre>
+
+
+
+        <div class="container" id="oneproduct">
+            <div class="content">
+                <h2>Egy termék lekérdezése <q class="green">Token nélkül elérhető útvonal</q></h2>
+                <p>Alapértelmezetten az id 1 és 375 közötti szám. A további hozzáadott termék id-ja mindig egyel
+                    növekszik.
+                </p>
+            </div>
+            <pre>
             <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/product/:id', {
+    fetch('https://thomasapi.eu/api/product/:id', {         // a :id helyett a keresett termék id-jét kel beírni!
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -69,34 +83,36 @@
     .then(console.log);
             </code>
         </pre>
-    </div>
-
-    <div class="container" id="login">
-        <div class="content">
-            <h2>Bejelentkezés <q class="green">Token nélkül elérhető útvonal</q></h2>
-            <p>Az oldalra vásárlóként és adminisztrátorként lehet bejelentkezni. Minden felhasználó jelszava:
-                <strong>Password</strong>.
-            </p>
-            <p>Bejelentkezés után egy tokent kapunk válaszként.</p>
-            <h3>Példa felhaználók:</h3>
-            <p><strong>Vásárló felhasználó nevek:</strong></p>
-            <ul>
-                <li>a.fausztina1269</li>
-                <li>b.eduárd1389</li>
-
-            </ul>
-            <p><strong>Adminisztrátor felhasználó nevek:</strong></p>
-            <ul>
-                <li>h.tamás1363</li>
-                <li>k.kata42</li>
-            </ul>
-
         </div>
-        <pre>
+
+        <div class="container" id="login">
+            <div class="content">
+                <h2>Bejelentkezés <q class="green">Token nélkül elérhető útvonal</q></h2>
+                <p>Az oldalra vásárlóként és adminisztrátorként lehet bejelentkezni. Minden felhasználó jelszava:
+                    <strong>Password</strong>.
+                </p>
+                <p>Bejelentkezés után egy tokent kapunk válaszként.</p>
+                <h3>Példa felhaználók:</h3>
+                <p><strong>Vásárló felhasználó nevek:</strong></p>
+                <ul>
+                    <li>a.fausztina1269</li>
+                    <li>b.eduárd1389</li>
+
+                </ul>
+                <p><strong>Adminisztrátor felhasználó nevek:</strong></p>
+                <ul>
+                    <li>h.tamás1363</li>
+                    <li>k.kata42</li>
+                </ul>
+
+            </div>
+            <pre>
             <code class="language-javascript">
     fetch('https://thomasapi.eu/api/login', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },  
+        headers: {
+             "Content-Type": "application/json; charset=UTF-8" 
+        },  
         mode: "cors",  
         body: JSON.stringify({
 
@@ -110,18 +126,19 @@
         </code>
     </pre>
 
-    </div>
-
-    <div class="container" id="register">
-        <div class="content">
-            <h2>Vásárlói regisztráció <q class="green">Token nélkül elérhető útvonal</q></h2>
-            <p>Itt lehet új vásárlót regisztrálni, ezen az útvonalon autómatikusan beállítja az IsAdmin értéket
-                false-ra.
-            </p>
-            <p>A rendszer már létező felhasználó nevet vagy regisztrált email címet nem enged mégegyszer regisztrálni.
-            </p>
         </div>
-        <pre>
+
+        <div class="container" id="register">
+            <div class="content">
+                <h2>Vásárlói regisztráció <q class="green">Token nélkül elérhető útvonal</q></h2>
+                <p>Itt lehet új vásárlót regisztrálni, ezen az útvonalon autómatikusan beállítja az IsAdmin értéket
+                    false-ra.
+                </p>
+                <p>A rendszer már létező felhasználó nevet vagy regisztrált email címet nem enged mégegyszer
+                    regisztrálni.
+                </p>
+            </div>
+            <pre>
         <code class="language-javascript">
     fetch('https://thomasapi.eu/api/register', {
         method: "POST",
@@ -152,18 +169,240 @@
     .then(console.log);
         </code>
     </pre>
-    </div>
-
-
-    <div class="container" id="profile">
-        <div class="content">
-            <h2>Saját profil lekérdezése <q class="yellow">Vásárlói és admin tokennel is elérhető útvonal</q></h2>
-
-            <p>Saját felhasználói profil adatait kapjuk meg.</p>
         </div>
-        <pre>
+
+
+        <div class="container" id="profile">
+            <div class="content">
+                <h2>Saját profil lekérdezése <q class="yellow">Vásárlói és admin tokennel is elérhető útvonal</q>
+                </h2>
+
+                <p>Saját felhasználói profil adatait kapjuk meg.</p>
+            </div>
+            <pre>
         <code class="language-javascript">
     fetch('https://thomasapi.eu/api/profile', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+        <div class="container" id="profileUpdate">
+            <div class="content">
+                <h2>Saját profil frissítése <q class="yellow">Vásárlói és admin tokennel is elérhető útvonal</q>
+                </h2>
+
+                <p>Saját felhasználói profil adatait frissítése.</p>
+                <p>Front-end oldalon kell biztosítani, hogy a vásárló csak olyan adatot módosíthasson amihez
+                    jogosultsága van. Pl. az IsAdmint nem érheti el egy vásárló!</p>
+                <p>A jelszó is megváltoztatható.Az új jelszón tárolása is hashelve történik.</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/profileupdate', {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+            {
+                "UserName": "k.kata42",
+                "Password": "Password",
+                "IsAdmin": true,
+                "AdminRole": "Értékesítő",
+                "JobTitle": "Alkalmazott",
+                "BirthDate": "1979-06-12",
+                "LastName": "Kecskeméti",
+                "FirstName": "Kata",
+                "EmailAddress": "kata.kecskemeti@gEGS.hu",
+                "PhoneNumber": "0630-896-6666",
+                "Postcode": "1152",
+                "City": "Budapest",
+                "Address": "Szent Miklós útja 16/a 4/14",
+                "ShippingPostcode": "",
+                "ShippingCity": "",
+                "ShippingAddress": "",
+                "InvoicePostcode": "",
+                "InvoicegCity": "",
+                "InvoiceAddress": "",
+                "ActiveFlag": "0",
+                "InvoiceCity": "",
+            }
+        })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="sendOrder">
+            <div class="content">
+                <h2>Rendelés leadása <q class="yellow">Vásárlói és admin tokennel is elérhető útvonal</q></h2>
+
+                <p>A kosárban gyűjtött termékek rendelésének leadásához.</p>
+                <p>Rendelés ID-t a backend generálja. A kommenten kívül minden mező kitöltése kötelező. Ezeket a
+                    front-end generálja!</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/order', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+            "Customerid": 5,
+            "OrderStatus": "Pending",
+            "OrderDate": "2024-03-22T11:16:37.000Z",
+            "PaymentTypeID": 1,
+            "SubTotal": 5600,
+            "Freight": 2500,
+            "DeliveryTypeID": 1,
+            "TotalDue": 8100,
+            "Comment": "",
+            "OrderItems": [
+                {
+                    "ProductID": 276,
+                    "Quantity": 1,
+                    "UnitPrice": 5600,
+                    "LineTotal": 5600
+                }
+            ]
+        })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+
+        <div class="container" id="ownOrder">
+            <div class="content">
+                <h2>Saját rendelések lekérdezése <q class="yellow">Vásárlói és admin tokennel is elérhető
+                        útvonal</q>
+                </h2>
+                <p>A felhasználó UserId-ja a rendelésekben szereplő Customerid. Ha b.eduárd1389 néven jelentkezel be
+                    és
+                    a kapott tokennel hívod meg az útvonalat akkor egy rendelést biztosan visszakapsz.</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/ownorder', {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+
+
+        <div class="container" id="adminRegister">
+            <div class="content">
+                <h2>Új admin regisztrálása <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+
+                <p>Új admin regisztrációját csak egy adminisztrátor végezheti el. </p>
+                <p>Minden felhasználónak egyedi email címmel kell rendelkeznie!</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/adminregister', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+            "UserName": "NewAdmin1",
+            "Password": "Password",
+            "IsAdmin": true,
+            "AdminRole": "Értékesítő",
+            "JobTitle": "Alkalmazott",
+            "BirthDate": "1992-06-07",
+            "LastName": "Kecskeméti",
+            "FirstName": "Kata",
+            "EmailAddress": "newadmin1@gEGS.hu",
+            "PhoneNumber": "0630-896-4567",
+            "Postcode": "1152",
+            "City": "Budapest",
+            "Address": "Szent Miklós útja 16/a 4/14"
+        })   
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+        <div class="container" id="allOrder">
+            <div class="content">
+                <h2>Az összes rendelés adatainak lekérése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+
+                <p>Az összes leadott rendelés adatait meg tudjuk tekinteni. Alapértelmezetten az adatbázisban 3
+                    rendelést tárolunk.</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/orders', {      
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="oneOrder">
+            <div class="content">
+                <h2>Egy rendelés adatainak lekérése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+
+                <p>Egy rendelés adatait lehet ID alapon lekérni. Alapértelmezetten az adatbázisban 3 rendelést
+                    tárolunk.
+                </p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -175,11 +414,354 @@
     .then(console.log);
         </code>
     </pre>
-    </div>
+        </div>
 
 
 
 
+
+
+
+        <div class="container" id="updateOrder">
+            <div class="content">
+                <h2>Rendelés módosítása <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+
+                <p>Egy már leadott rendelés módosítását az adminisztrátorok végezhetik el.</p>
+                <p>Csak a módosított adatot kell elküldeni, a Customerid-t nem szabad módosítani így front-enden ezt
+                    a
+                    lehetőséget nem kínáljuk föl!</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+            "OrderStatus": "Pending",
+            "OrderDate": "2024-03-22T11:16:37.000Z",
+            "PaymentTypeID": 1,
+            "SubTotal": 11200,
+            "Freight": 2500,
+            "DeliveryTypeID": 1,
+            "TotalDue": 13700,
+            "Comment": "",
+            "OrderItems": [
+                {
+                    "ProductID": 276,
+                    "Quantity": 2,
+                    "UnitPrice": 5600,
+                    "LineTotal": 11200
+                }
+            ]
+        })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="deleteOrder">
+            <div class="content">
+                <h2>Rendelés törlése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+                <p>Egy már leadott rendelést lehet törölni a megadott ID alapján.</p>
+
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="allUsers">
+            <div class="content">
+                <h2>Az összes felhasználó adatainak lekérése <q class="pink">Admin tokennel elérhető útvonal</q>
+                </h2>
+
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/users', {      
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="oneUser">
+            <div class="content">
+                <h2>Egy felhasználó adatainak lekérése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+
+                <p>Egy felhasználó adatait lehet ID alapon lekérni.</p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/user/:id', {       // a :id helyett a keresett frlhasználó id-jét kel beírni!
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kellmásolni
+        },
+        mode: "cors"
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="updateOneUser">
+            <div class="content">
+                <h2>Egy felhasználó adatainak módisítása <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+
+                <p>Az adminisztrátor bármelyik felhasználó adatait tudja módosítani.</p>
+                <p>A jelszó is megváltoztatható a tárolása az új jelszónak is hashelve történik.</p>
+
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/user/:id', {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+            {
+                "UserName": "k.kata42",
+                "Password": "Password",
+                "IsAdmin": true,
+                "AdminRole": "Értékesítő",
+                "JobTitle": "Alkalmazott",
+                "BirthDate": "1979-06-12",
+                "LastName": "Kecskeméti",
+                "FirstName": "Kata",
+                "EmailAddress": "kata.kecskemeti@gEGS.hu",
+                "PhoneNumber": "0630-896-6666",
+                "Postcode": "1152",
+                "City": "Budapest",
+                "Address": "Szent Miklós útja 16/a 4/14",
+                "ShippingPostcode": "",
+                "ShippingCity": "",
+                "ShippingAddress": "",
+                "InvoicePostcode": "",
+                "InvoicegCity": "",
+                "InvoiceAddress": "",
+                "ActiveFlag": "0",
+                "InvoiceCity": "",
+            }
+        })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+        <div class="container" id="deleteUser">
+            <div class="content">
+                <h2>Felhasználó törlése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+                <p>Egy felhasználót lehet törölni a megadott ID alapján.</p>
+
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/user/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+
+        <div class="container" id="newProduct">
+            <div class="content">
+                <h2>Új termék feltöltése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+                <p>Egy új termék hozzáadását az adminisztrátorok végezhetik el.
+                </p>
+                <p>Kötelező egy termékfotó feltöltése is ezért postmannel ez az útvonal nem tesztelhető!
+                </p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/newproduct', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+                "Name": "New Product",
+                "Modell": "Stratocaster",
+                "Color": "Piros",
+                "Quality": "S",
+                "BundsNumber": "22",
+                "Body": "Nyárfa",
+                "Neck": "Kemény Juhar",
+                "FretBoard": "Jatoba",
+                "Pickup": "H-S-S",
+                "Weight": "",
+                "ChanelsNumber": "",
+                "SpeakersNumber": "",
+                "Wattage": "",
+                "Widht": "",
+                "Lenght": "",
+                "Thickness": "",
+                "CableLenght": "",
+                "ConnectorType": "",
+                "Radius": "",
+                "CategoryName": "Gitár",
+                "SubCategoryName": "Jobbkezes",
+                "BrandName": "Cort",
+                "Price": 69900,
+                "Description": "A Cort G sorozatában olyan elektromos gitárok találhatók, amelyek a klasszikus ST modellek és a modernebb Super ST testkialakítás elemeit tartalmazzák. Megfizethető áruknak köszönhetően biztosan tetszeni fognak a rockszakma fiatal törekvőinek, de biztosan nem sértik meg a tapasztalt, technikailag képzett játékosokat sem.",
+                "OnSale": true,
+                "SalePrice": 59900,
+                "InStock": true
+            })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+
+
+
+        <div class="container" id="updateProduct">
+            <div class="content">
+                <h2>Egy termék módosítása <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+                <p>Egy termék módosítását az adminisztrátorok végezhetik el.
+                </p>
+                <p>Termékfotó modosítása nem kötelező.
+                </p>
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/productupdate/:id', {         // a :id helyett a termék id-jét kel beírni!
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+        body: JSON.stringify({
+                "Name": "New Product",
+                "Modell": "Stratocaster",
+                "Color": "Piros",
+                "Quality": "S",
+                "BundsNumber": "22",
+                "Body": "Nyárfa",
+                "Neck": "Kemény Juhar",
+                "FretBoard": "Jatoba",
+                "Pickup": "H-S-S",
+                "Weight": "",
+                "ChanelsNumber": "",
+                "SpeakersNumber": "",
+                "Wattage": "",
+                "Widht": "",
+                "Lenght": "",
+                "Thickness": "",
+                "CableLenght": "",
+                "ConnectorType": "",
+                "Radius": "",
+                "CategoryName": "Gitár",
+                "SubCategoryName": "Jobbkezes",
+                "BrandName": "Cort",
+                "Price": 69900,
+                "Description": "A Cort G sorozatában olyan elektromos gitárok találhatók, amelyek a klasszikus ST modellek és a modernebb Super ST testkialakítás elemeit tartalmazzák. Megfizethető áruknak köszönhetően biztosan tetszeni fognak a rockszakma fiatal törekvőinek, de biztosan nem sértik meg a tapasztalt, technikailag képzett játékosokat sem.",
+                "OnSale": true,
+                "SalePrice": 59900,
+                "InStock": false         // ezt módosítottuk
+            })
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+
+        <div class="container" id="deleteProduct">
+            <div class="content">
+                <h2>Termék törlése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
+                <p>Egy terméket lehet törölni a megadott ID alapján.</p>
+
+            </div>
+            <pre>
+        <code class="language-javascript">
+    fetch('https://thomasapi.eu/api/product/:id', {       // a :id helyett a törlendő termék id-jét kel beírni!
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Authorization": "Bearer saját-token"                     // a saját-token helyére a bejelentkezésnél kapott tokent kell bemásolni
+        },
+        mode: "cors",
+    })
+    .then(res => res.json())
+    .then(console.log);
+        </code>
+    </pre>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2024, Thomas Horvath</p>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 </body>
 

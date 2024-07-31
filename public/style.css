@@ -4,42 +4,46 @@
         box-sizing: border-box;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
 
-    /* Csökkentett betűméret és szélesség beállítása */
+    body {
+        background-color: #eee;
+        font-family: monospace;
+        font-size: 16px;
+        color: #222;
+    }
+
+    .hero {
+        padding: 2rem;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
     pre[class*="language-"] {
         font-size: 14px;
-        /* Változtasd meg a betűméretet itt */
-
-        /* Állítsd be a maximális szélességet itt */
         margin: 1rem 1rem;
-        /* Középre igazítás */
         padding: 5px;
-        /* Belső margó */
         border-radius: 5px;
-        /* Lekerekített sarkok */
         overflow-x: auto;
-        /* Vízszintes görgetés engedélyezése */
-
     }
 
     .container {
         padding: 3rem 1rem;
         border-bottom: 5px solid #aaa;
-        background-color: #eee;
+        background-color: #ddd;
         border-radius: 5px;
-        margin: 2rem;
+        margin: 3rem 0;
     }
 
     .content {
         padding: 1rem;
     }
 
-    body {
-        background-color: white;
-        padding: 2rem 1rem;
-        font-family: monospace;
-        font-size: 16px;
-    }
+
 
     h1 {
         font-size: 3rem;
@@ -53,11 +57,12 @@
     li {
         list-style: decimal;
         margin-left: 2rem;
-        margin-bottom: .3rem;
+        margin-bottom: .4rem;
     }
 
     h2 {
         font-size: 1.7rem;
+        margin-bottom: .8rem;
     }
 
     p {
@@ -65,7 +70,7 @@
         font-size: 1rem;
     }
 
-    .tartalom h3 {
+    .contents-container h3 {
         margin-bottom: 1rem;
     }
 
@@ -77,44 +82,52 @@
         font-size: 1rem;
         font-weight: 400;
     }
-.green {
-    color:limegreen;
-    background: #222;
-    padding: .3rem 1.5rem;
-    border-radius: 8px;
-}
-.orange {
-    color: chocolate;
-    background: #222;
-    padding: .3rem 1.5rem;
-    border-radius: 8px;
-}
-.yellow {
-    color: goldenrod;
-    background: #222;
-    padding: .3rem 1.5rem;
-    border-radius: 8px;
-}
-.pink {
-    color: mediumvioletred;
-    background: #222;
-    padding: .3rem 1.5rem;
-    border-radius: 8px;
-}
+
+    .green {
+        color: limegreen;
+        background: #222;
+        padding: .3rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .orange {
+        color: chocolate;
+        background: #222;
+        padding: .3rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .yellow {
+        color: goldenrod;
+        background: #222;
+        padding: .3rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .pink {
+        color: mediumvioletred;
+        background: #222;
+        padding: .3rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    footer {
+        height: 6rem;
+        padding-bottom: 1rem;
+        background-color: #222;
+        color: #eee;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+
 
     @media screen and (max-width: 768px) {
-        body {
-            padding: 1rem 0;
-        }
+       
 
         h1 {
             font-size: 2rem;
-            margin: 1rem;
-        }
-
-        .sub-title,
-        .tartalom {
-            margin-left: 1rem;
+           
         }
 
         .container {
