@@ -9,7 +9,7 @@ const getOneProductById = async (req, res) => {
             res.status(404).send([{ error: 'A termék nem található!' }]);
         } else {
             product.ProductPhotoURL = getFullUrl(req, `${product.ProductPhotoURL}`);
-            res.json(product);
+            res.status(200).json(product);
         }
     } catch (error) {
         res.status(500).json({ message: error.message });

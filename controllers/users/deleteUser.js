@@ -9,7 +9,7 @@ const deleteUser = async (req, res) => {
         if (!deletedUser) {
             res.status(404).send([{ error: 'A felhasználó nem található!' }]);
         } else {
-            res.json({ message: 'A felhasználó sikeresen törölve!', deletedUser });
+            res.status(200).json({ message: 'A felhasználó sikeresen törölve!', deletedUser });
         }
     } catch (error) {
         res.status(500).json({ hiba : error.message });

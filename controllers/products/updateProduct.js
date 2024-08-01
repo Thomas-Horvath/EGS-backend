@@ -2,9 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const Product = require('../../models/product.js');
 const multer = require('multer');
-const Joi = require('joi');
-
-
+const productSchema = require('../../validationSchemas/productSchema');
+  
 
 
 // Állítsd be a multer-t
@@ -35,6 +34,10 @@ const updateProductById = async (req, res) => {
 
             console.log(' 1 Update Data:', updateData); // Naplózzuk az update adatokat
 
+
+           
+        
+            
             // Keressük meg a régi terméket, hogy hozzáférjünk a régi kép URL-jéhez
             const oldProduct = await Product.findOne({ ProductID: id });
             if (!oldProduct) {
@@ -50,16 +53,22 @@ const updateProductById = async (req, res) => {
                 updateData.ProductPhotoURL = oldProduct.ProductPhotoURL;
             }
 
+            const { error } = productSchema.validate(updateData);
+            if (error) {
+                console.log('hiba:', error.details[0].message);
+              return res.status(400).json({ message: error.details[0].message });
+            } 
+          
             // Frissítjük a terméket az adatbázisban
             const updatedProduct = await Product.findOneAndUpdate({ ProductID: id }, updateData, { new: true });
 
             if (!updatedProduct) {
+                console.log('hiba:', error.details[0].message);
                 return res.status(404).send([{ error: 'A termék nem található!' }]);
             }
 
-            res.json(updatedProduct);
+            res.status(201).json(updatedProduct);
         } catch (error) {
-            console.error('Hiba történt a termék frissítése során:', error); // Naplózzuk a hibát
             res.status(500).json({ message: error.message });
         }
     });

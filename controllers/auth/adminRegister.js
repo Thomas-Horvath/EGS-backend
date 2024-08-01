@@ -1,4 +1,6 @@
 const User = require('../../models/users');
+const userSchema = require('../../validationSchemas/userSchema');
+
 
 const adminRegister = async (req, res) => {
     try {
@@ -8,9 +10,7 @@ const adminRegister = async (req, res) => {
         const maxUserIdUser = await User.findOne().sort({ UserID: -1 }).exec();
         const newUserId = maxUserIdUser ? maxUserIdUser.UserID + 1 : 1;
 
-
-        const newAdmin = new User({
-            UserID : newUserId,
+        const newAdminData = {
             UserName,
             Password,
             EmailAddress,
@@ -19,7 +19,17 @@ const adminRegister = async (req, res) => {
             IsAdmin: true,
             AdminRole,
             JobTitle,
-            ActiveFlag: "1"
+            ActiveFlag: true
+        }
+        // Validáljuk a beérkező adatokat
+        const { error } = userSchema.validate(newAdminData);
+        if (error) {
+            return res.status(400).json({ message: error.details[0].message });
+        }
+
+        const newAdmin = new User({
+            ...newAdminData,
+            UserID: newUserId,
         });
 
         await newAdmin.save();

@@ -9,7 +9,7 @@ const getOrdersByCustomerId = async (req, res) => {
       return res.status(404).json({ error: 'Nincsenek rendelései a megadott felhasználónak' });
     }
     
-    res.status(200).json({ ownOrders: orders });  // Eredmények visszaadása ownOrders néven
+    res.status(200).json({ ownOrders: orders });  // Eredmények visszaadása ownOrders néven egy tömbben!!!
   } catch (error) {
     console.error('Hiba történt a rendelés lekérdezése során:', error);
     res.status(500).json({ error: 'Hiba történt a rendelés lekérdezése során' });

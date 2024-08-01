@@ -17,7 +17,7 @@ const deleteProductById = async (req, res) => {
                     console.error('Kép törlési hiba:', err);
                     return res.status(500).json({ message: 'A termék törölve, de a kép törlése sikertelen.', error: err });
                 }
-                res.json({ message: 'A termék és a kép sikeresen törölve!', deletedProduct });
+                res.status(200).json({ message: 'A termék és a kép sikeresen törölve!', deletedProduct });
             });
         }
 

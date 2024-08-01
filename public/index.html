@@ -23,7 +23,7 @@
                 <li><a href="#profile">Saját profil lekérdezése</a></li>
                 <li><a href="#profileUpdate">Saját profil frissítése</a></li>
                 <li><a href="#sendOrder">Rendelés leadása</a></li>
-                <li><a href="#ownOrder">Saját rendelések lekérdezése</a></li>
+                <li><a href="#ownOrders">Saját rendelések lekérdezése</a></li>
                 <li><a href="#adminRegister">Új admin regisztrálása</a></li>
                 <li><a href="#allOrder">Az összes rendelés adatainak lekérése</a></li>
                 <li><a href="#oneOrder">Egy rendelés adatainak lekérése</a></li>
@@ -296,7 +296,7 @@
 
 
 
-        <div class="container" id="ownOrder">
+        <div class="container" id="ownOrders">
             <div class="content">
                 <h2>Saját rendelések lekérdezése <q class="yellow">Vásárlói és admin tokennel is elérhető
                         útvonal</q>
@@ -307,7 +307,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/ownorder', {
+    fetch('https://thomasapi.eu/api/ownorders', {
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",

@@ -1,40 +1,8 @@
 const multer = require('multer');
 const path = require('path');
 const Product = require('../../models/product');
-const Joi = require('joi');
+const productSchema = require('../../validationSchemas/productSchema');
 
-
-// Definiáljuk a validáló sémát
-const productSchema = Joi.object({
-  Name: Joi.string().required(),
-  Model: Joi.string().required(),
-  Color: Joi.string().allow(''),
-  Quality: Joi.string().required(),
-  BundsNumber: Joi.string().allow(''),
-  Body: Joi.string().allow(''),
-  Neck: Joi.string().allow(''),
-  FretBoard: Joi.string().allow(''),
-  Pickup: Joi.string().allow(''),
-  Weight: Joi.number().default(0).min(0),
-  ChannelsNumber: Joi.number().default(0).min(0),
-  SpeakersNumber: Joi.number().default(0).min(0),
-  Wattage: Joi.number().default(0).min(0),
-  Width: Joi.number().default(0).min(0),
-  Length: Joi.number().default(0).min(0),
-  Thickness: Joi.number().default(0).min(0),
-  CableLength: Joi.number().default(0).min(0),
-  ConnectorType: Joi.string().allow(''),
-  Radius: Joi.string().allow(''),
-  CategoryName: Joi.string().required(),
-  SubCategoryName: Joi.string().required(),
-  BrandName: Joi.string().required(),
-  Price: Joi.number().required().min(0),
-  Description: Joi.string().required(),
-  ProductPhotoURL: Joi.string().required(),
-  OnSale: Joi.boolean().default(false),
-  SalePrice: Joi.number().default(0).min(0),
-  InStock: Joi.boolean().default(true),
-});
 
 // Állítsd be a multer-t
 const storage = multer.diskStorage({
@@ -67,25 +35,30 @@ const newProduct = async (req, res) => {
     if (!req.file) {
       return res.status(400).json({ message: 'Termékfotó feltöltése szükséges.' });
     }
+    const productData = {
+      ...req.body,
+      ProductPhotoURL: `/api/productsImg/${req.file.filename}`
+    };
+
+
 
     // Validáljuk a beérkező adatokat
-    const { error } = productSchema.validate(req.body);
+    const { error } = productSchema.validate(productData);
     if (error) {
       return res.status(400).json({ message: error.details[0].message });
     }
 
     // Új termék létrehozása a feltöltött fájl URL-jével
     const product = new Product({
-      ...req.body,
+      ...productData,
       ProductID: parseInt(req.file.filename), // Az ID-t a fájlnévből vesszük
-      ProductPhotoURL: `/api/productsImg/${req.file.filename}`
     });
 
     // Termék mentése az adatbázisba
     const savedProduct = await product.save();
     res.status(201).json(savedProduct);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 

@@ -78,7 +78,6 @@
         "CustomerID": 6,
         "OrderStatus": "Pending",
         "OrderDate": "2024-03-22T11:16:37Z",
-        "PaymentTypeID": 1,
         "SubTotal": 5600,
         "Freight": 2500,
         "DeliveryTypeID": 1,

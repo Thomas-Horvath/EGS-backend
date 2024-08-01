@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/users.js');
+const userSchema = require('../../validationSchemas/userSchema');
 
 const updateUserById = async (req, res) => {
     try {
@@ -14,12 +15,17 @@ const updateUserById = async (req, res) => {
            
         }
 
+        const { error } = userSchema.validate(updateData);
+        if (error) {
+            return res.status(400).json({ message: error.details[0].message });
+        }
+
         const updatedUser = await User.findOneAndUpdate({ UserID: id }, updateData, { new: true });
 
         if (!updatedUser) {
             res.status(404).send([{ error: 'A felhasználó nem található!' }]);
         } else {
-            res.json(updatedUser);
+            res.status(201).json(updatedUser);
         }
     } catch (error) {
         console.error('Error updating user:', error);

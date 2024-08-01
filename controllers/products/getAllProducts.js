@@ -12,7 +12,7 @@ const getAllProducts = async (req, res) => {
             return product;
         });
         
-        res.json(updatedProducts);
+        res.status(200).json(updatedProducts);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

@@ -18,7 +18,7 @@ const login = async (req, res) => {
             { expiresIn: '24h' } // Token lejárati idő
         );
 
-        res.json({ token });
+        res.status(200).json({ token });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

@@ -18,7 +18,7 @@
 		"ShippingCity" : "",
 		"ShippingAddress" : "",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : true
 	},
@@ -41,7 +41,7 @@
 		"ShippingCity" : "",
 		"ShippingAddress" : "",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : true
 	},
@@ -64,7 +64,7 @@
 		"ShippingCity" : "",
 		"ShippingAddress" : "",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : false
 	},
@@ -87,7 +87,7 @@
 		"ShippingCity" : "",
 		"ShippingAddress" : "",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : true
 	},
@@ -110,7 +110,7 @@
 		"ShippingCity" : "",
 		"ShippingAddress" : "",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : true
 	},
@@ -133,7 +133,7 @@
 		"ShippingCity" : "",
 		"ShippingAddress" : "",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : true
 	},
@@ -156,7 +156,7 @@
 		"ShippingCity" : "Budapest",
 		"ShippingAddress" : "Bicskei  utca 17",
 		"InvoicePostcode" : "",
-		"InvoicegCity" : "",
+		"InvoiceCity" : "",
 		"InvoiceAddress" : "",
 		"ActiveFlag" : true
 	}
