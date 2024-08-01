@@ -2,8 +2,8 @@ const Order = require('../../models/order.js');
 
 const getOrdersByCustomerId = async (req, res) => {
   try {
-    const customerId = req.user.id;  // Felhasználói azonosító lekérdezése
-    const orders = await Order.find({ Customerid: customerId });  // Szűrés a CustomerID alapján
+    const CustomerID = req.user.id;  // Felhasználói azonosító lekérdezése
+    const orders = await Order.find({ CustomerID: CustomerID });  // Szűrés a CustomerID alapján
     
     if (orders.length === 0) {
       return res.status(404).json({ error: 'Nincsenek rendelései a megadott felhasználónak' });

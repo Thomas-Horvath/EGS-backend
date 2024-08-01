@@ -3,7 +3,7 @@
 		"UserID" : 1,
 		"UserName" : "h.tamás1363",
 		"Password" : "Password",
-		"IsAdmin" : "1",
+		"IsAdmin" : true,
 		"AdminRole" : "Tulajdonos",
 		"JobTitle" : "Ügyvezető Igazgató",
 		"BirthDate" : "1978-01-29",
@@ -20,13 +20,13 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "1"
+		"ActiveFlag" : true
 	},
 	{
 		"UserID" : 2,
 		"UserName" : "g.szilvia1076",
 		"Password" : "Password",
-		"IsAdmin" : "1",
+		"IsAdmin" : true,
 		"AdminRole" : "Raktáros, Értékesítő",
 		"JobTitle" : "Igazgató helyettes",
 		"BirthDate" : "1983-01-07",
@@ -43,13 +43,13 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "1"
+		"ActiveFlag" : true
 	},
 	{
 		"UserID" : 3,
 		"UserName" : "k.kata42",
 		"Password" : "Password",
-		"IsAdmin" : "1",
+		"IsAdmin" : true,
 		"AdminRole" : "Értékesítő",
 		"JobTitle" : "Alkalmazott",
 		"BirthDate" : "1979-06-12",
@@ -66,16 +66,16 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "0"
+		"ActiveFlag" : false
 	},
 	{
 		"UserID" : 4,
 		"UserName" : "a.fausztina1269",
 		"Password" : "Password",
-		"IsAdmin" : "0",
+		"IsAdmin" : false,
 		"AdminRole" : "",
 		"JobTitle" : "",
-		"BirthDate" : "",
+		"BirthDate" : null,
 		"LastName" : "Antal",
 		"FirstName" : "Fausztina",
 		"EmailAddress" : "antal.fausztina@gmail.com",
@@ -89,16 +89,16 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "1"
+		"ActiveFlag" : true
 	},
 	{
 		"UserID" : 5,
 		"UserName" : "b.eduárd1389",
 		"Password" : "Password",
-		"IsAdmin" : "0",
+		"IsAdmin" : false,
 		"AdminRole" : "",
 		"JobTitle" : "",
-		"BirthDate" : "",
+		"BirthDate" : null,
 		"LastName" : "Bakos",
 		"FirstName" : "Eduárd",
 		"EmailAddress" : "bakos.eduard@gmail.com",
@@ -112,16 +112,16 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "1"
+		"ActiveFlag" : true
 	},
 	{
 		"UserID" : 6,
 		"UserName" : "b.margarét182",
 		"Password" : "Password",
-		"IsAdmin" : "0",
+		"IsAdmin" : false,
 		"AdminRole" : "",
 		"JobTitle" : "",
-		"BirthDate" : "",
+		"BirthDate" : null,
 		"LastName" : "Bakos",
 		"FirstName" : "Margarét",
 		"EmailAddress" : "bakos.margaret@gmail.com",
@@ -135,16 +135,16 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "1"
+		"ActiveFlag" : true
 	},
 	{
 		"UserID" : 7,
 		"UserName" : "b.rafael1454",
 		"Password" : "Password",
-		"IsAdmin" : "0",
+		"IsAdmin" : false,
 		"AdminRole" : "",
 		"JobTitle" : "",
-		"BirthDate" : "",
+		"BirthDate" : null,
 		"LastName" : "Bálint",
 		"FirstName" : "Rafael",
 		"EmailAddress" : "balint.rafael@gmail.com",
@@ -158,6 +158,6 @@
 		"InvoicePostcode" : "",
 		"InvoicegCity" : "",
 		"InvoiceAddress" : "",
-		"ActiveFlag" : "1"
+		"ActiveFlag" : true
 	}
 ]

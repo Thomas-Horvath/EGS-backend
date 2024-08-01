@@ -1,9 +1,9 @@
 [
     {
         "OrderID": 1,
-        "Customerid": 5,
+        "CustomerID": 5,
         "OrderStatus": "Pending",
-        "OrderDate": "2024-03-03 08:45:29",
+        "OrderDate": "2024-03-03T08:45:29Z",
         "SubTotal": 418644,
         "Freight": 0,
         "DeliveryTypeID": 1,
@@ -44,9 +44,9 @@
     },
     {
         "OrderID": 2,
-        "Customerid": 4,
+        "CustomerID": 4,
         "OrderStatus": "Pending",
-        "OrderDate": "2024-03-14 20:46:00",
+        "OrderDate": "2024-03-14T20:46:00Z",
         "SubTotal": 27270,
         "Freight": 0,
         "DeliveryTypeID": 1,
@@ -75,9 +75,9 @@
     },
     {
         "OrderID": 3,
-        "Customerid": 6,
+        "CustomerID": 6,
         "OrderStatus": "Pending",
-        "OrderDate": "2024-03-22 11:16:37",
+        "OrderDate": "2024-03-22T11:16:37Z",
         "PaymentTypeID": 1,
         "SubTotal": 5600,
         "Freight": 2500,
