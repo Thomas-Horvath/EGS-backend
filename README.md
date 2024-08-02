@@ -4,18 +4,18 @@
 
 ## Használat:
 
-    1. Hozz létre egy mongodb adatbázist három collectionnel:
-        - users
-        - products 
-        - orders
+1. Hozz létre egy mongodb adatbázist három collectionnel:
+    - users
+    - products 
+    - orders
 
-    2. teszt adatokat az api mappában találod. A users collectionsbe a usersWithHashedPassword.json fájlt használd.
+2. teszt adatokat az api mappában találod. A users collectionsbe a usersWithHashedPassword.json fájlt használd.
 
-    3. a .env-template fájl nevéből töröld a -template végződést.
-    4. a .env fájlba generálj egy JWT keyt és add meg a mongodb kapcsolódási linkjét. A port szabadon választható.
-    5. `npm install` parancsal telepítsd a függőségeket. Így létrejön a node_moduls mappa.
-    6. `npm run prod` vagy `npm start` parancsokkal indíthatod az alkalmazást 
-    7. Az api mappában található postmanTest.json fájlt a postmen alkalmazásba beimprortálva tudud tesztelni az alakalmazás útvonalait. 
+3. a .env-template fájl nevéből töröld a -template végződést.
+4. a .env fájlba generálj egy JWT keyt és add meg a mongodb kapcsolódási linkjét. A port szabadon választható.
+5. `npm install` parancsal telepítsd a függőségeket. Így létrejön a node_moduls mappa.
+6. `npm run prod` vagy `npm start` parancsokkal indíthatod az alkalmazást 
+7. Az api mappában található postmanTest.json fájlt a postmen alkalmazásba beimprortálva tudud tesztelni az alakalmazás útvonalait. 
 
 
 ## Felhasznált technológiák:
