@@ -36,7 +36,7 @@ const customerRegister = async (req, res) => {
         const newCustomerData = {
             UserName,
             Password,
-            IsAdmin: true,
+            IsAdmin: false,
             LastName,
             FirstName,
             EmailAddress,
