@@ -48,7 +48,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/products', {
+    fetch('http://localhost:9000/api/products', {
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -72,7 +72,7 @@
             </div>
             <pre>
             <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/product/:id', {         // a :id helyett a keresett termék id-jét kel beírni!
+    fetch('http://localhost:9000/api/product/:id', {         // a :id helyett a keresett termék id-jét kel beírni!
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -108,17 +108,15 @@
             </div>
             <pre>
             <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/login', {
+    fetch('http://localhost:9000/api/login', {
         method: 'POST',
         headers: {
              "Content-Type": "application/json; charset=UTF-8" 
         },  
         mode: "cors",  
         body: JSON.stringify({
-
-        username: 'emilys',
-        password: 'emilyspass',
-
+            "UserName": "k.kata42",
+            "Password": "Password"
         })
     })
     .then(res => res.json())
@@ -140,7 +138,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/register', {
+    fetch('http://localhost:9000/api/register', {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -181,7 +179,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/profile', {
+    fetch('http://localhost:9000/api/profile', {
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -208,7 +206,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/profileupdate', {
+    fetch('http://localhost:9000/api/profileupdate', {
         method: "PUT",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -260,7 +258,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/order', {
+    fetch('http://localhost:9000/api/order', {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -270,7 +268,6 @@
         body: JSON.stringify({
             "CustomerID": 5,
             "OrderStatus": "Pending",
-            "PaymentTypeID": 1,
             "SubTotal": 5600,
             "Freight": 2500,
             "DeliveryTypeID": 1,
@@ -307,7 +304,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/ownorders', {
+    fetch('http://localhost:9000/api/ownorders', {
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -335,7 +332,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/adminregister', {
+    fetch('http://localhost:9000/api/adminregister', {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -345,7 +342,6 @@
         body: JSON.stringify({
             "UserName": "NewAdmin1",
             "Password": "Password",
-            "IsAdmin": true,
             "AdminRole": "Értékesítő",
             "JobTitle": "Alkalmazott",
             "BirthDate": "1992-06-07",
@@ -374,7 +370,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/orders', {      
+    fetch('http://localhost:9000/api/orders', {      
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -401,7 +397,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+    fetch('http://localhost:9000/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -432,7 +428,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+    fetch('http://localhost:9000/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
         method: "PUT",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -440,8 +436,8 @@
         },
         mode: "cors",
         body: JSON.stringify({
+            "CustomerID": 2,
             "OrderStatus": "Pending",
-            "PaymentTypeID": 1,
             "SubTotal": 11200,
             "Freight": 2500,
             "DeliveryTypeID": 1,
@@ -474,7 +470,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+    fetch('http://localhost:9000/api/order/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
         method: "DELETE",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -499,7 +495,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/users', {      
+    fetch('http://localhost:9000/api/users', {      
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -524,7 +520,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/user/:id', {       // a :id helyett a keresett frlhasználó id-jét kel beírni!
+    fetch('http://localhost:9000/api/user/:id', {       // a :id helyett a keresett frlhasználó id-jét kel beírni!
         method: "GET",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -551,7 +547,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/user/:id', {
+    fetch('http://localhost:9000/api/user/:id', {
         method: "PUT",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -601,7 +597,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/user/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
+    fetch('http://localhost:9000/api/user/:id', {       // a :id helyett a keresett rendelés id-jét kel beírni!
         method: "DELETE",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -624,12 +620,12 @@
                 <h2>Új termék feltöltése <q class="pink">Admin tokennel elérhető útvonal</q></h2>
                 <p>Egy új termék hozzáadását az adminisztrátorok végezhetik el.
                 </p>
-                <p>Kötelező egy termékfotó feltöltése is ezért postmannel ez az útvonal nem tesztelhető!
+                <p>Kötelező egy termékfotó feltöltése!!!
                 </p>
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/newproduct', {
+    fetch('http://localhost:9000/api/newproduct', {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -687,7 +683,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/productupdate/:id', {         // a :id helyett a termék id-jét kel beírni!
+    fetch('http://localhost:9000/api/productupdate/:id', {         // a :id helyett a termék id-jét kel beírni!
         method: "PUT",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",
@@ -740,7 +736,7 @@
             </div>
             <pre>
         <code class="language-javascript">
-    fetch('https://thomasapi.eu/api/product/:id', {       // a :id helyett a törlendő termék id-jét kel beírni!
+    fetch('http://localhost:9000/api/product/:id', {       // a :id helyett a törlendő termék id-jét kel beírni!
         method: "DELETE",
         headers: {
             "Content-Type": "application/json; charset=UTF-8",

@@ -4,7 +4,7 @@ const userSchema = require('../../validationSchemas/userSchema');
 
 const adminRegister = async (req, res) => {
     try {
-        const { UserName, Password, EmailAddress, FirstName, LastName, AdminRole, JobTitle } = req.body;
+        const { UserName, Password, EmailAddress, BirthDate, FirstName, LastName, AdminRole, JobTitle, PhoneNumber, Postcode, City, Address } = req.body;
 
         // Lekérjük a jelenlegi legnagyobb UserID értéket
         const maxUserIdUser = await User.findOne().sort({ UserID: -1 }).exec();
@@ -14,11 +14,16 @@ const adminRegister = async (req, res) => {
             UserName,
             Password,
             EmailAddress,
+            BirthDate,
             FirstName,
             LastName,
             IsAdmin: true,
             AdminRole,
             JobTitle,
+            PhoneNumber,
+            Postcode,
+            City,
+            Address,
             ActiveFlag: true
         }
         // Validáljuk a beérkező adatokat

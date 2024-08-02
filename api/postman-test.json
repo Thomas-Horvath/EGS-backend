@@ -1,0 +1,651 @@
+{
+	"info": {
+		"_postman_id": "8d33642d-6dab-4508-8afb-b7f54a26c417",
+		"name": "EGS - Localhost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31844039"
+	},
+	"item": [
+		{
+			"name": "Bejelentkezés",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "// {\r\n//     \"UserName\": \"h.tamás1363\",\r\n//     \"Password\": \"Password\"\r\n// }\r\n{\r\n    \"UserName\": \"k.kata42\",\r\n    \"Password\": \"Password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Új vásárló regisztrálása",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\" :\"New customer\",                   \r\n    \"Password\" : \"Password\",                  \r\n    \"BirthDate\" : \"\",\r\n    \"LastName\" : \"New\",\r\n    \"FirstName\" : \"Customer\",\r\n    \"EmailAddress\" : \"new.customer@gmail.com\",      \r\n    \"PhoneNumber\" : \"\",\r\n    \"Postcode\" : \"\",\r\n    \"City\" : \"\",\r\n    \"Address\" : \"\",\r\n    \"ShippingPostcode\" : \"\",\r\n    \"ShippingCity\" : \"\",\r\n    \"ShippingAddress\" : \"\",\r\n    \"InvoicePostcode\" : \"\",\r\n    \"InvoicegCity\" : \"\",\r\n    \"InvoiceAddress\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Új admin regisztrálása",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiVXNlck5hbWUiOiJoLnRhbcOhczEzNjMiLCJJc0FkbWluIjp0cnVlLCJpYXQiOjE3MjI1OTU2MjYsImV4cCI6MTcyMjY4MjAyNn0.iXOojE2ll4wUuRQfntMZQFOnH2Ay0QgWmZAMEDjJxbE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"UserName\": \"NewAdmin1\",\r\n\"Password\": \"Password\",\r\n\"IsAdmin\": true,\r\n\"AdminRole\": \"Értékesítő\",\r\n\"JobTitle\": \"Alkalmazott\",\r\n\"BirthDate\": \"1992-06-07\",\r\n\"LastName\": \"Kecskeméti\",\r\n\"FirstName\": \"Kata\",\r\n\"EmailAddress\": \"newadmin1@gEGS.hu\",\r\n\"PhoneNumber\": \"0630-896-4567\",\r\n\"Postcode\": \"1152\",\r\n\"City\": \"Budapest\",\r\n\"Address\": \"Szent Miklós útja 16/a 4/14\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/adminregister",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"adminregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Összes felhasználó lekérdezése",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiVXNlck5hbWUiOiJoLnRhbcOhczEzNjMiLCJJc0FkbWluIjp0cnVlLCJpYXQiOjE3MjI1OTU2MjYsImV4cCI6MTcyMjY4MjAyNn0.iXOojE2ll4wUuRQfntMZQFOnH2Ay0QgWmZAMEDjJxbE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saját profil lekérdezése",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5Nzg4NiwiZXhwIjoxNzIyNjg0Mjg2fQ.AxmpUOs48dJzFAdMC5FZXyBu8-hpMWEBiLuclG27qBI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy felhasználó adatainak lekérdezése ID alapján",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/user/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"user",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saját profil módosítása",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"k.kata42\",\r\n    \"Password\": \"$2b$10$H0BT6sm6XNZKRgHl9NZdAe0b5/Ze4EY3uTZuwKuYVLy31VQOeQmYK\",\r\n    \"IsAdmin\": true,\r\n    \"AdminRole\": \"Értékesítő\",\r\n    \"JobTitle\": \"Alkalmazott\",\r\n    \"BirthDate\": \"1979-06-12T00:00:00.000Z\",\r\n    \"LastName\": \"Kecskeméti\",\r\n    \"FirstName\": \"Kata\",\r\n    \"EmailAddress\": \"kata.kecskemeti@gEGS.hu\",\r\n    \"PhoneNumber\": \"0630-896-6267\",\r\n    \"Postcode\": \"1152\",\r\n    \"City\": \"Budapest\",\r\n    \"Address\": \"Szent Miklós útja 16/a 4/14\",\r\n    \"ShippingPostcode\": \"\",\r\n    \"ShippingCity\": \"\",\r\n    \"ShippingAddress\": \"\",\r\n    \"InvoicePostcode\": \"\",\r\n    \"InvoiceCity\": \"\",\r\n    \"InvoiceAddress\": \"\",\r\n    \"ActiveFlag\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/profileupdate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"profileupdate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy felhasználó adatainak módosítása ID alapján",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiVXNlck5hbWUiOiJoLnRhbcOhczEzNjMiLCJJc0FkbWluIjp0cnVlLCJpYXQiOjE3MjI1OTU2MjYsImV4cCI6MTcyMjY4MjAyNn0.iXOojE2ll4wUuRQfntMZQFOnH2Ay0QgWmZAMEDjJxbE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"UserName\": \"New customer\",\r\n\"Password\": \"$2b$10$K2leZRoDkBF0uo3/XCpQmOEb8P8laBmZhiCO4CwffxDbqTmFJtfuK\",\r\n\"IsAdmin\": true,\r\n\"AdminRole\": \"\",\r\n\"JobTitle\": \"\",\r\n\"BirthDate\": null,\r\n\"LastName\": \"New\",\r\n\"FirstName\": \"Customer\",\r\n\"EmailAddress\": \"new.customer@gmail.com\",\r\n\"PhoneNumber\": \"063012340568\",\r\n\"Postcode\": \"\",\r\n\"City\": \"\",\r\n\"Address\": \"\",\r\n\"ShippingPostcode\": \"\",\r\n\"ShippingCity\": \"\",\r\n\"ShippingAddress\": \"\",\r\n\"InvoicePostcode\": \"\",\r\n\"InvoiceCity\": \"\",\r\n\"InvoiceAddress\": \"\",\r\n\"ActiveFlag\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/user/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"user",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Felhasználó törlése ID lapján",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiVXNlck5hbWUiOiJoLnRhbcOhczEzNjMiLCJJc0FkbWluIjp0cnVlLCJpYXQiOjE3MjI1OTU2MjYsImV4cCI6MTcyMjY4MjAyNn0.iXOojE2ll4wUuRQfntMZQFOnH2Ay0QgWmZAMEDjJxbE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/user/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"user",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Összes termék lekérdezése",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy termék lekérdezése ID alapján",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/product/122",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"product",
+						"122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Új termék feltöltése",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productPhoto",
+							"contentType": "",
+							"type": "file",
+							"src": "/C:/Asztal/PK_2024/Projektek/Electric_guitar_shop(teszt)/assets/images/closeup-man-playing-bass-guitar.jpg"
+						},
+						{
+							"key": "Name",
+							"value": "New Product",
+							"type": "text"
+						},
+						{
+							"key": "Model",
+							"value": "Starato",
+							"type": "text"
+						},
+						{
+							"key": "Quality",
+							"value": "P",
+							"type": "text"
+						},
+						{
+							"key": "CategoryName",
+							"value": "Gitár",
+							"type": "text"
+						},
+						{
+							"key": "SubCategoryName",
+							"value": "Jobbkezes",
+							"type": "text"
+						},
+						{
+							"key": "BrandName",
+							"value": "Fender",
+							"type": "text"
+						},
+						{
+							"key": "Price",
+							"value": "120000",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Valami szöveg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/newproduct",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"newproduct"
+					]
+				},
+				"description": "A body-ban a form-data formátumot válassz és ne felejts el egy képet feltölteni a prodactPhoto value értékéhez!"
+			},
+			"response": []
+		},
+		{
+			"name": "Egy termék adatainak módosítása ID alapján",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"New Product\",\r\n    \"Model\": \"Starato\",\r\n    \"Color\": \"\",\r\n    \"Quality\": \"P\",\r\n    \"BundsNumber\": \"\",\r\n    \"Body\": \"\",\r\n    \"Neck\": \"\",\r\n    \"FretBoard\": \"\",\r\n    \"Pickup\": \"\",\r\n    \"Weight\": 0,\r\n    \"ChannelsNumber\": 0,\r\n    \"SpeakersNumber\": 0,\r\n    \"Wattage\": 0,\r\n    \"Width\": 0,\r\n    \"Length\": 0,\r\n    \"Thickness\": 0,\r\n    \"CableLength\": 0,\r\n    \"ConnectorType\": \"\",\r\n    \"Radius\": \"\",\r\n    \"CategoryName\": \"Gitár\",\r\n    \"SubCategoryName\": \"Jobbkezes\",\r\n    \"BrandName\": \"Fender\",\r\n    \"Price\": 120000,\r\n    \"Description\": \"Új leírás megadása\",\r\n    \"ProductPhotoURL\": \"http://localhost:9000/api/productsImg/377.jpg\",\r\n    \"OnSale\": false,\r\n    \"SalePrice\": 0,\r\n    \"InStock\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/productupdate/377",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"productupdate",
+						"377"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy termék törlése ID alapján",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/product/376",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"product",
+						"376"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Új rendelés leadása",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerID\": 3,\r\n    \"OrderStatus\": \"Pending\",\r\n    \"SubTotal\": 5600,\r\n    \"Freight\": 2500,\r\n    \"DeliveryTypeID\": 1,\r\n    \"TotalDue\": 8100,\r\n    \"Comment\": \"\",\r\n    \"OrderItems\": [\r\n        {\r\n            \"ProductID\": 276,\r\n            \"Quantity\": 1,\r\n            \"UnitPrice\": 5600,\r\n            \"LineTotal\": 5600\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saját rendelések megtekintése",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/ownorders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"ownorders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Összes rendelés megtekintése",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy rendelés adatainak lekérdezése ID alapján",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/order/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"order",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy rendelés módosítása ID alapján",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n         \"CustomerID\": 2,\r\n         \"OrderStatus\": \"Pending\",\r\n            \"SubTotal\": 11200,\r\n            \"Freight\": 2500,\r\n            \"DeliveryTypeID\": 1,\r\n            \"TotalDue\": 13700,\r\n            \"Comment\": \"Új komment a rendeléshez\",\r\n            \"OrderItems\": [\r\n                {\r\n                    \"ProductID\": 276,\r\n                    \"Quantity\": 2,\r\n                    \"UnitPrice\": 5600,\r\n                    \"LineTotal\": 11200\r\n                }\r\n            ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/order/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"order",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Egy rendelés törlése ID alapján",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiVXNlck5hbWUiOiJrLmthdGE0MiIsIklzQWRtaW4iOnRydWUsImlhdCI6MTcyMjU5ODIwNywiZXhwIjoxNzIyNjg0NjA3fQ.Bgh4a3rOC1ENlaNmTkHo9ki7YEr_qLnnsHTT7jujDQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/api/order/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"order",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
