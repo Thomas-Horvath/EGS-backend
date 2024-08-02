@@ -123,6 +123,26 @@
     }
 
 
+
+    .copy-button {
+        background-color: #222;
+        border: none;
+        color: goldenrod;
+        padding: .6rem 2rem;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        box-shadow: 3px 3px 5px #222222bb;
+      }
+.copy-button:hover {
+    color: limegreen
+}
+
     @media screen and (max-width: 768px) {
        
 
