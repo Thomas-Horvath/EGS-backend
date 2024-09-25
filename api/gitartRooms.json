@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "name": "Próbaterem 1",
+        "size": "20 m²",
+        "price_per_hour": 3000,
+        "equipment": {
+            "drums": {
+                "snare": {
+                    "brand": "Yamaha",
+                    "model": "Stage Custom Birch",
+                    "size": "14x5.5",
+                    "description": "Jól kiegyensúlyozott, meleg hangzású pergő."
+                },
+                "bass_drum": {
+                    "brand": "Yamaha",
+                    "model": "Stage Custom Birch",
+                    "size": "22x16",
+                    "description": "Erőteljes, mély hangzású basszusdob."
+                },
+                "cymbals": {
+                    "brand": "Zildjian",
+                    "models": [
+                        "A Custom Hi-Hats",
+                        "A Custom Crash",
+                        "A Custom Ride"
+                    ],
+                    "description": "Professzionális minőségű cintányérok."
+                }
+            },
+            "guitar_amp": {
+                "brand": "Marshall",
+                "model": "DSL40C",
+                "power": "40W",
+                "description": "Klasszikus Marshall hangzás, sokoldalú csatornák."
+            },
+            "bass_amp": {
+                "brand": "Ampeg",
+                "model": "BA-115",
+                "power": "150W",
+                "description": "Hatalmas, mély basszus hangzás, ideális bármilyen stílushoz."
+            },
+            "microphones": {
+                "brand": "Shure",
+                "models": [
+                    "SM58",
+                    "SM57"
+                ],
+                "description": "Legendás mikrofonok énekhez és hangszerhez."
+            },
+            "pa_system": {
+                "brand": "Yamaha",
+                "model": "Stagepas 400i",
+                "power": "400W",
+                "description": "Könnyen kezelhető, hordozható PA rendszer."
+            }
+        },
+        "description": "Tökéletes választás kisebb zenekarok számára. Kiváló akusztika és professzionális felszereltség."
+    },
+    {
+        "id": 2,
+        "name": "Próbaterem 2",
+        "size": "30 m²",
+        "price_per_hour": 4000,
+        "equipment": {
+            "drums": {
+                "snare": {
+                    "brand": "Pearl",
+                    "model": "Export Series",
+                    "size": "14x5.5",
+                    "description": "Robusztus, jól kiegyensúlyozott hangzás."
+                },
+                "bass_drum": {
+                    "brand": "Pearl",
+                    "model": "Export Series",
+                    "size": "22x18",
+                    "description": "Erős, punchy basszusdob."
+                },
+                "cymbals": {
+                    "brand": "Sabian",
+                    "models": [
+                        "B8 Hi-Hats",
+                        "B8 Crash",
+                        "B8 Ride"
+                    ],
+                    "description": "Költséghatékony és tartós cintányérok."
+                }
+            },
+            "keyboard": {
+                "brand": "Korg",
+                "model": "Kronos",
+                "keys": "88",
+                "description": "Professzionális munkaállomás billentyűzet, kiváló hangszínekkel."
+            },
+            "guitar_amp": {
+                "brand": "Fender",
+                "model": "Hot Rod Deluxe",
+                "power": "40W",
+                "description": "Tiszta Fender hangzás, ideális blues és rock zenéhez."
+            },
+            "bass_amp": {
+                "brand": "Hartke",
+                "model": "HD150",
+                "power": "150W",
+                "description": "Punchy és világos hangzás, alumínium membránnal."
+            },
+            "microphones": {
+                "brand": "AKG",
+                "models": [
+                    "D5",
+                    "C1000S"
+                ],
+                "description": "Kiváló minőségű mikrofonok énekhez és hangszerhez."
+            },
+            "pa_system": {
+                "brand": "Mackie",
+                "model": "Thump12A",
+                "power": "500W",
+                "description": "Masszív és erőteljes PA rendszer."
+            }
+        },
+        "description": "Nagyobb zenekarok számára ideális terem. A felszereltség és a tér lehetővé teszi a komplexebb próbákat is."
+    },
+    {
+        "id": 3,
+        "name": "Próbaterem 3",
+        "size": "40 m²",
+        "price_per_hour": 5000,
+        "equipment": {
+            "drums": {
+                "snare": {
+                    "brand": "DW",
+                    "model": "Collector's Series",
+                    "size": "14x6.5",
+                    "description": "Prémium minőségű pergő, mély és gazdag hangzással."
+                },
+                "bass_drum": {
+                    "brand": "DW",
+                    "model": "Collector's Series",
+                    "size": "24x18",
+                    "description": "Hatalmas, mély hangzású basszusdob, amely minden stílushoz ideális."
+                },
+                "cymbals": {
+                    "brand": "Zildjian",
+                    "models": [
+                        "K Custom Hi-Hats",
+                        "K Custom Crash",
+                        "K Custom Ride"
+                    ],
+                    "description": "Prémium kategóriás cintányérok, meleg és sötét hangzással."
+                }
+            },
+            "guitar_amp": {
+                "brand": "Mesa Boogie",
+                "model": "Dual Rectifier",
+                "power": "100W",
+                "description": "Masszív torzított hangzás, ideális metálhoz és rockhoz."
+            },
+            "bass_amp": {
+                "brand": "Gallien-Krueger",
+                "model": "RB700-II",
+                "power": "480W",
+                "description": "Erőteljes basszus hangzás, kiváló dinamika és artikuláció."
+            },
+            "microphones": {
+                "brand": "Neumann",
+                "models": [
+                    "U87",
+                    "KM184"
+                ],
+                "description": "Stúdió minőségű mikrofonok énekhez és hangszerhez."
+            },
+            "pa_system": {
+                "brand": "QSC",
+                "model": "K12.2",
+                "power": "1000W",
+                "description": "Nagy teljesítményű, kiváló hangminőségű PA rendszer."
+            }
+        },
+        "description": "Legnagyobb próbatermünk, ahol a legigényesebb zenekarok is megtalálják a számításaikat. Kiemelkedő hangszigetelés és professzionális felszerelés."
+    }
+]

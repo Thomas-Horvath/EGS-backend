@@ -1,6 +1,5 @@
-
 const authorizeCustomer = (req, res, next) => {
-    if (req.user && req.user.IsAdmin === false) {
+    if (req.user && req.user.IsAdmin === false ) {
         next();
     } else {
         return res.status(403).json({ message: 'Hozzáférés megtagadva' });
@@ -9,3 +8,5 @@ const authorizeCustomer = (req, res, next) => {
 };
 
 module.exports = authorizeCustomer;
+
+

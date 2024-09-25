@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "name": "GitArt Stúdió",
+        "size": "50 m²",
+        "price_per_hour": 7000,
+        "equipment": {
+            "mixing_console": {
+                "brand": "SSL",
+                "model": "AWS 924",
+                "channels": "24",
+                "description": "Professzionális analóg/digitális keverőpult, kiváló hangminőséggel."
+            },
+            "studio_monitors": {
+                "brand": "Genelec",
+                "model": "8351B",
+                "power": "150W",
+                "description": "Pontos és tiszta hangvisszaadás, ideális stúdió monitorok."
+            },
+            "microphones": {
+                "brand": "Neumann",
+                "models": [
+                    "U87",
+                    "TLM 103",
+                    "KM184"
+                ],
+                "description": "Csúcsminőségű mikrofonok énekhez és hangszerhez."
+            },
+            "audio_interface": {
+                "brand": "Apogee",
+                "model": "Ensemble",
+                "channels": "8",
+                "description": "Prémium minőségű hangkártya, kiváló konverzióval és alacsony késleltetéssel."
+            },
+            "daw": {
+                "software": "Pro Tools",
+                "version": "2023",
+                "description": "Az ipari szabványnak számító digitális audio munkaállomás."
+            }
+        },
+        "description": "Magas szintű felvételi lehetőségek profi zenekarok és egyéni előadók számára. Modern technológia és kényelmes munkakörnyezet."
+    }
+]

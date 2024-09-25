@@ -1,5 +1,6 @@
 const User = require('../../models/users');
-const userSchema = require('../../validationSchemas/userSchema');
+const userRegisterSchema = require('../../validationSchemas/userRegisterSchema');
+const generateUniqueUserID = require('../../utils/generateUniqueUserID');
 
 
 const adminRegister = async (req, res) => {
@@ -7,8 +8,7 @@ const adminRegister = async (req, res) => {
         const { UserName, Password, EmailAddress, BirthDate, FirstName, LastName, AdminRole, JobTitle, PhoneNumber, Postcode, City, Address } = req.body;
 
         // Lekérjük a jelenlegi legnagyobb UserID értéket
-        const maxUserIdUser = await User.findOne().sort({ UserID: -1 }).exec();
-        const newUserId = maxUserIdUser ? maxUserIdUser.UserID + 1 : 1;
+        const newUserId = await generateUniqueUserID();
 
         const newAdminData = {
             UserName,
@@ -27,7 +27,7 @@ const adminRegister = async (req, res) => {
             ActiveFlag: true
         }
         // Validáljuk a beérkező adatokat
-        const { error } = userSchema.validate(newAdminData);
+        const { error } = userRegisterSchema.validate(newAdminData);
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }

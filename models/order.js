@@ -20,6 +20,9 @@ const orderSchema = new Schema({
   DeliveryTypeID: { type: Number, required: true },
   TotalDue: { type: Number, required: true, min: 0 },
   Comment: { type: String, default: "" },
+  ShippingPostcode: { type: Number, required: true},
+  ShippingCity:  { type: String, required: true },
+  ShippingAddress: { type: String, required: true}, 
   OrderItems: [orderItemSchema] // Al sémák beágyazása
 });
 

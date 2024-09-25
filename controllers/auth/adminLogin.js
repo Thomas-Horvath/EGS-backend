@@ -11,6 +11,9 @@ const login = async (req, res) => {
         if (!user || !(await user.comparePassword(Password))) {
             return res.status(401).json({ message: 'Hibás felhasználónév vagy jelszó' });
         }
+        if (!user.IsAdmin) {
+            return res.status(403).json({ message: 'Csak adminisztrátorok jelentkezhetnek be!' });
+        }
 
         const token = jwt.sign(
             { id: user.UserID, UserName: user.UserName, IsAdmin: user.IsAdmin, ActiveFlag: user.ActiveFlag },

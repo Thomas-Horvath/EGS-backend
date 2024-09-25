@@ -1,5 +1,6 @@
 const User = require('../../models/users.js');
-const userSchema = require('../../validationSchemas/userSchema');
+const userRegisterSchema = require('../../validationSchemas/userRegisterSchema');
+const generateUniqueUserID = require('../../utils/generateUniqueUserID');
 
 
 const customerRegister = async (req, res) => {
@@ -28,10 +29,7 @@ const customerRegister = async (req, res) => {
         if (existingUser) {
             return res.status(400).json({ message: 'Felhasználónév vagy email már létezik' });
         }
-
-        // Lekérjük a jelenlegi legnagyobb UserID értéket
-        const maxUserIdUser = await User.findOne().sort({ UserID: -1 }).exec();
-        const newUserId = maxUserIdUser ? maxUserIdUser.UserID + 1 : 1;
+        const newUserId = await generateUniqueUserID();
 
         const newCustomerData = {
             UserName,
@@ -55,7 +53,7 @@ const customerRegister = async (req, res) => {
 
         console.log(newCustomerData)
         // Validáljuk a beérkező adatokat
-        const { error } = userSchema.validate(newCustomerData);
+        const { error } = userRegisterSchema.validate(newCustomerData);
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }

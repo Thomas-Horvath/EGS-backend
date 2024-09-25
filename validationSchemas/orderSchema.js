@@ -18,6 +18,9 @@ const orderSchema = Joi.object({
   DeliveryTypeID: Joi.number().required(),
   TotalDue: Joi.number().required().min(0),
   Comment: Joi.string().allow(''),
+  ShippingPostcode: Joi.number().required(),
+  ShippingCity:  Joi.string().required(),
+  ShippingAddress: Joi.string().required(), 
   OrderItems: Joi.array().items(orderItemSchema).required() // Al sémák beágyazása
 });
 

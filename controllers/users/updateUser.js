@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 const User = require('../../models/users.js');
-const userSchema = require('../../validationSchemas/userSchema');
+const userUpdateSchema = require('../../validationSchemas/userUpdateSchema');
 
 const updateUserById = async (req, res) => {
     try {
@@ -15,7 +15,7 @@ const updateUserById = async (req, res) => {
            
         }
 
-        const { error } = userSchema.validate(updateData);
+        const { error } = userUpdateSchema.validate(updateData);
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
